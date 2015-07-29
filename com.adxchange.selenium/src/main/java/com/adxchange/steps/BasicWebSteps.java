@@ -4,6 +4,7 @@ import com.adxchange.Pages;
 import org.jbehave.core.annotations.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class BasicWebSteps {
@@ -17,21 +18,11 @@ public class BasicWebSteps {
 
     @Given("I am in FF")
     public void invokeBrowser() {
-        FirefoxProfile profile = new FirefoxProfile ();
-        // enable geolocation
-        profile.setPreference("geo.prompt.testing", true);
-        profile.setPreference("geo.prompt.testing.allow", true);
-
-       // driver = new FirefoxDriver(profile);
-        
     }
 
     @Given("I navigate to testsystem")
     public void navigate() {
         pages.homePage().open();
-        
-        //driver.get("");
-
     }
 
     @Then("I verify template elements")
@@ -52,9 +43,4 @@ public class BasicWebSteps {
         driver.findElement(By.id("locationContainer")).isDisplayed();
         driver.findElement(By.tagName("footer")).isDisplayed();
     }
-    
-    @AfterStory
-    public void afterStory() {
-        driver.quit();
-    }
-} 
+}

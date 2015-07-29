@@ -1,7 +1,6 @@
 package com.adxchange;
 
-import java.util.List;
-
+import com.adxchange.steps.BasicWebSteps;
 import com.google.common.util.concurrent.MoreExecutors;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
@@ -12,9 +11,21 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
-import com.adxchange.steps.BasicWebSteps;
 import org.jbehave.core.steps.SilentStepMonitor;
-import org.jbehave.web.selenium.*;
+import org.jbehave.web.selenium.ContextView;
+import org.jbehave.web.selenium.FirefoxWebDriverProvider;
+import org.jbehave.web.selenium.LocalFrameContextView;
+import org.jbehave.web.selenium.PerStoriesWebDriverSteps;
+import org.jbehave.web.selenium.PropertyWebDriverProvider;
+import org.jbehave.web.selenium.SeleniumConfiguration;
+import org.jbehave.web.selenium.SeleniumContext;
+import org.jbehave.web.selenium.SeleniumStepMonitor;
+import org.jbehave.web.selenium.WebDriverProvider;
+import org.jbehave.web.selenium.WebDriverScreenshotOnFailure;
+import org.jbehave.web.selenium.WebDriverSteps;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
+import java.util.List;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
@@ -29,7 +40,7 @@ import static org.jbehave.core.reporters.Format.TXT;
  * </p> 
  */
 public class StoriesRunner extends JUnitStories {
-    private WebDriverProvider driverProvider = new PropertyWebDriverProvider();
+    private WebDriverProvider driverProvider = new FirefoxWebDriverProvider();
     private WebDriverSteps lifecycleSteps = new PerStoriesWebDriverSteps(driverProvider);
     private SeleniumContext context = new SeleniumContext();
     private ContextView contextView = new LocalFrameContextView().sized(500, 100);
@@ -42,6 +53,10 @@ public class StoriesRunner extends JUnitStories {
         if ( lifecycleSteps instanceof PerStoriesWebDriverSteps ){
             configuredEmbedder().useExecutorService(MoreExecutors.sameThreadExecutor());
         }
+        FirefoxProfile profile = new FirefoxProfile();
+        // enable geolocation
+        profile.setPreference("geo.prompt.testing", true);
+        profile.setPreference("geo.prompt.testing.allow", true);
     }
 
     
