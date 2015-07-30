@@ -7,6 +7,8 @@ import org.openqa.selenium.support.How;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -21,17 +23,33 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "searching")
     private WebElement quickSearchButtonEl;
 
+    @FindBy(how = How.CLASS_NAME, using = "changeLocationLink")
+    private WebElement changeLocationLink;
+
+    @FindBy(how = How.CLASS_NAME, using = "locationContainer")
+    private WebElement locationContainer;
+
+
     public HomePage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
     public void open() {
-        get("http://tsuser:QM7yams@www.theadxchange.com");
+        // "http://tsuser:QM7yams@www.theadxchange.com"
+        get(System.getProperty("qaHost"));
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public void search() {
-        quickSearchKeywordsEl.sendKeys("suka");
-        quickSearchButtonEl.click();
+    public void openLocationPopup() {
+        changeLocationLink.click();
+    }
+
+    public void search(String keyword) {
+        quickSearchKeywordsEl.sendKeys(keyword);
+        changeLocationLink.click();
+    }
+
+    public void verifySelectedLocation(String state, String city) {
+        assertEquals(city + ", " + state, locationContainer.getText());
     }
 }

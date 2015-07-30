@@ -16,11 +16,12 @@ public class Pages {
 
     private final WebDriverProvider driverProvider;
     private HomePage home;
-    private ResumePage runStory;
+    private LocationPopupPage locationPopupPage;
 
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
     }
+
 
     public HomePage homePage(){
         if ( home == null ){
@@ -30,12 +31,11 @@ public class Pages {
         return home;
     }
 
-    public ResumePage resumePage() {
-        if ( runStory == null ){
-            runStory = new ResumePage(driverProvider);
+    public LocationPopupPage locationPopupPage(){
+        if ( locationPopupPage == null ){
+            locationPopupPage = new LocationPopupPage(driverProvider);
         }
-        return runStory;
+        PageFactory.initElements(driverProvider.get(),  locationPopupPage);
+        return locationPopupPage;
     }
-
-
 }

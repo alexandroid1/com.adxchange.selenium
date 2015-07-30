@@ -48,7 +48,7 @@ public class StoriesRunner extends JUnitStories {
 
 
     public StoriesRunner() {
-        /*configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailureInStories(true)
+        /*configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailunreInStories(true)
                 .doIgnoreFailureInView(true).useThreads(2).useStoryTimeoutInSecs(60);*/
         if ( lifecycleSteps instanceof PerStoriesWebDriverSteps ){
             configuredEmbedder().useExecutorService(MoreExecutors.sameThreadExecutor());

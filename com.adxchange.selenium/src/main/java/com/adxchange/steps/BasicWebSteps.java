@@ -1,28 +1,35 @@
 package com.adxchange.steps;
 
 import com.adxchange.Pages;
-import org.jbehave.core.annotations.*;
+import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class BasicWebSteps {
     static WebDriver driver;
-    
+
     private Pages pages;
 
     public BasicWebSteps(Pages pages) {
         this.pages = pages;
     }
 
-    @Given("I am in FF")
-    public void invokeBrowser() {
-    }
-
     @Given("I navigate to testsystem")
     public void navigate() {
         pages.homePage().open();
+    }
+
+    @When("I change location to $state $city")
+    public void whenIChangeLocation(String state, String city) {
+        pages.locationPopupPage().open();
+        pages.locationPopupPage().changeLocation(state, city);
+    }
+
+    @Then("I verify location as $state $city")
+    public void verifySelectedLocation(String state, String city) {
+        pages.homePage().verifySelectedLocation(state, city);
     }
 
     @Then("I verify template elements")
@@ -31,16 +38,9 @@ public class BasicWebSteps {
         driver.findElement(By.id("locationContainer")).isDisplayed();
         driver.findElement(By.tagName("footer")).isDisplayed();
     }
-    
-    @Then("I verify search")
-    public void verifySearch() {// verifying search element in google home page         
-        pages.homePage().search();
-    }
 
-    @When("I open change location popup")
-    public void clickChangeLocationPopup() {// verifying search element in google home page         
-        driver.findElement(By.className("logo")).click();
-        driver.findElement(By.id("locationContainer")).isDisplayed();
-        driver.findElement(By.tagName("footer")).isDisplayed();
+    @Then("I verify search $keyword")
+    public void verifySearch(String keyword) {// verifying search element in google home page
+        pages.homePage().search(keyword);
     }
 }

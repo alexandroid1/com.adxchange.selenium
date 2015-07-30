@@ -15,25 +15,27 @@ import java.util.concurrent.TimeUnit;
  *         Time: 5:37 PM
  */
 public class LocationPopupPage extends AbstractPage {
-    @FindBy(how = How.NAME, using = "quickSearchKeywords")
-    private WebElement quickSearchKeywordsEl;
+    @FindBy(how = How.NAME, using = "stateChangeLoc")
+    private WebElement stateChangeLocEl;
 
-    @FindBy(how = How.ID, using = "searching")
-    private WebElement quickSearchButtonEl;
+    @FindBy(how = How.NAME, using = "cityChangeLoc")
+    private WebElement cityChangeLocEl;
+
+    @FindBy(how = How.ID, using = "go")
+    private WebElement changeLocationBtnEl;
 
     public LocationPopupPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
     public void open() {
-        WebDriverProvider webDriverProvider = getDriverProvider();
-
         get("http://tsuser:QM7yams@www.theadxchange.com");
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    public void search() {
-        quickSearchKeywordsEl.sendKeys("suka");
-        quickSearchButtonEl.click();
+    public void changeLocation(String state, String city) {
+        stateChangeLocEl.sendKeys(state);
+        cityChangeLocEl.sendKeys(city);
+        changeLocationBtnEl.click();
     }
 }
