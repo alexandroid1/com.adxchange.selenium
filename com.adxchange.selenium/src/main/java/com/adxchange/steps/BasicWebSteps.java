@@ -27,6 +27,12 @@ public class BasicWebSteps {
         pages.locationPopupPage().changeLocation(state, city);
     }
 
+    @When("I change location to ZIP $zipCode")
+    public void whenIChangeLocation(String zipCode) {
+        pages.locationPopupPage().open();
+        pages.locationPopupPage().changeLocationWithZIP(zipCode);
+    }
+
     @Then("I verify location as $state $city")
     public void verifySelectedLocation(String state, String city) {
         pages.homePage().verifySelectedLocation(state, city);

@@ -21,6 +21,9 @@ public class LocationPopupPage extends AbstractPage {
     @FindBy(how = How.NAME, using = "cityChangeLoc")
     private WebElement cityChangeLocEl;
 
+    @FindBy(how = How.ID, using = "zipCode")
+    private WebElement zipCodeEl;
+
     @FindBy(how = How.ID, using = "go")
     private WebElement changeLocationBtnEl;
 
@@ -36,6 +39,11 @@ public class LocationPopupPage extends AbstractPage {
     public void changeLocation(String state, String city) {
         stateChangeLocEl.sendKeys(state);
         cityChangeLocEl.sendKeys(city);
+        changeLocationBtnEl.click();
+    }
+
+    public void changeLocationWithZIP(String zipCode) {
+        zipCodeEl.sendKeys(zipCode);
         changeLocationBtnEl.click();
     }
 }
