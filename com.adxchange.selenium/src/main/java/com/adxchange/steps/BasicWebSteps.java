@@ -23,13 +23,11 @@ public class BasicWebSteps {
 
     @When("I change location to $state $city")
     public void whenIChangeLocation(String state, String city) {
-        pages.locationPopupPage().open();
         pages.locationPopupPage().changeLocation(state, city);
     }
 
     @When("I change location to ZIP $zipCode")
     public void whenIChangeLocation(String zipCode) {
-        pages.locationPopupPage().open();
         pages.locationPopupPage().changeLocationWithZIP(zipCode);
     }
 

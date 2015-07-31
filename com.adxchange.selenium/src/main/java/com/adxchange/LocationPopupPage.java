@@ -31,11 +31,6 @@ public class LocationPopupPage extends AbstractPage {
         super(driverProvider);
     }
 
-    public void open() {
-        get("http://tsuser:QM7yams@www.theadxchange.com");
-        manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
     public void changeLocation(String state, String city) {
         stateChangeLocEl.sendKeys(state);
         cityChangeLocEl.sendKeys(city);
