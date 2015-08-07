@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BasicWebSteps {
-    static WebDriver driver;
+    public static WebDriver driver;
 
     private Pages pages;
 
@@ -21,7 +21,7 @@ public class BasicWebSteps {
         pages.homePage().open();
     }
 
-    @When("I change location to $state, $city")
+    @When("I change location to $state,$city")
     public void whenIChangeLocation(String state, String city) {
         pages.locationPopupPage().changeLocation(state, city);
     }
@@ -31,7 +31,7 @@ public class BasicWebSteps {
         pages.locationPopupPage().changeLocationWithZIP(zipCode);
     }
 
-    @Then("I verify location as $state, $city")
+    @Then("I verify location as $state,$city")
     public void verifySelectedLocation(String state, String city) {
         pages.homePage().verifySelectedLocation(state, city);
     }

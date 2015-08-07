@@ -1,11 +1,13 @@
 package com.adxchange;
 
+import com.adxchange.steps.BasicWebSteps;
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.support.ui.Select;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,8 +34,21 @@ public class LocationPopupPage extends AbstractPage {
     }
 
     public void changeLocation(String state, String city) {
-        stateChangeLocEl.sendKeys(state);
-        cityChangeLocEl.sendKeys(city);
+
+       // FirefoxDriver driver = new FirefoxDriver();
+
+        WebDriver driver = BasicWebSteps.driver;
+
+        /*stateChangeLocEl.sendKeys(state);*/
+        WebElement dropDownListBoxForState = driver.findElement(By.id("stateChangeLoc"));
+        Select clickThisState = new Select(dropDownListBoxForState);
+        clickThisState.selectByValue(state);
+
+        /*cityChangeLocEl.sendKeys(city);*/
+        WebElement dropDownListBoxForCity = driver.findElement(By.id("cityChangeLoc"));
+        Select clickThisCity = new Select(dropDownListBoxForCity);
+        clickThisCity.selectByValue(city);
+
         changeLocationBtnEl.click();
     }
 

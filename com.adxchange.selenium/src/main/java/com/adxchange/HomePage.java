@@ -50,7 +50,8 @@ public class HomePage extends AbstractPage {
     }
 
     public void verifySelectedLocation(String state, String city) {
-        assertEquals(city + ", " + state, locationContainer.getText());
+        //assertEquals(city + ", " + state, locationContainer.getText());
+        assertEquals(state + "," + city, locationContainer.getText());
     }
 
     public void verifySelectedLocation(String zipCode) {

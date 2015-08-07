@@ -1,9 +1,9 @@
-Scenario: Change location to AA, Fro and verify result
+Scenario: Change location to Apo,AA and verify result
 Given I navigate to testsystem
-When I change location to Khmel'nyts'koho Avenue Melitopol',Zaporiz'ka oblast
-Then I verify location as Khmel'nyts'koho Avenue Melitopol',Zaporiz'ka oblast
+When I change location to Apo,AA
+Then I verify location as Apo,AA
 
 Scenario: Change location zip 85614 and verify result
 Given I navigate to testsystem
-When I change location to ZIP85614
-Then I verify location as ZIP85614
+When I change location to ZIP 85614
+Then I verify location as ZIP 85614
