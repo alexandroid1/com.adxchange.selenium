@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 public class BasicWebSteps {
     public static WebDriver driver;
 
-    private Pages pages;
+    public Pages pages;
 
     public BasicWebSteps(Pages pages) {
         this.pages = pages;
@@ -21,24 +21,22 @@ public class BasicWebSteps {
         pages.homePage().open();
     }
 
-    @When("I change location to $state,$city")
-    public void whenIChangeLocation(String state, String city) {
-        pages.locationPopupPage().changeLocation(state, city);
+    @When("I change location1 to $state,$city")
+    public void whenIChangeLocation1(String state, String city) {
+        pages.locationPopupPage().changeLocation1(state, city);
+    }
+    @Then("I verify location1 as $state,$city")
+    public void verifySelectedLocation1(String state, String city) {
+        pages.homePage().verifySelectedLocation1(state, city);
     }
 
-    @When("I change location to ZIP $zipCode")
-    public void whenIChangeLocation(String zipCode) {
-        pages.locationPopupPage().changeLocationWithZIP(zipCode);
+    @When("I change location2 to ZIP $zipCode")
+    public void whenIChangeLocation2(String zipCode) {
+        pages.locationPopupPage().changeLocation2(zipCode);
     }
-
-    @Then("I verify location as $state,$city")
-    public void verifySelectedLocation(String state, String city) {
-        pages.homePage().verifySelectedLocation(state, city);
-    }
-
-    @Then("I verify location as ZIP $zipCode")
-    public void verifySelectedLocation(String zipCode) {
-        pages.homePage().verifySelectedLocation(zipCode);
+    @Then("I verify location2 as: $state,$city")
+    public void verifySelectedLocation2(String state, String city) {
+        pages.homePage().verifySelectedLocation2(state, city);
     }
 
     @Then("I verify template elements")

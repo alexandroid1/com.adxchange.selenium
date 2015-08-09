@@ -1,9 +1,6 @@
 package com.adxchange;
 
-import com.adxchange.steps.BasicWebSteps;
 import org.jbehave.web.selenium.WebDriverProvider;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -29,31 +26,32 @@ public class LocationPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "go")
     private WebElement changeLocationBtnEl;
 
+    @FindBy(how = How.CLASS_NAME, using = "changeLocationLink")
+    private WebElement changeLocationLinkL1;
+
+    @FindBy(how = How.ID, using = "addressChange")
+    private WebElement addressChangeAC1;
+
+    @FindBy(how = How.CLASS_NAME, using = "close")
+    private WebElement closeWindow1;
+
     public LocationPopupPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
-    public void changeLocation(String state, String city) {
-
-       // FirefoxDriver driver = new FirefoxDriver();
-
-        WebDriver driver = BasicWebSteps.driver;
-
-        /*stateChangeLocEl.sendKeys(state);*/
-        WebElement dropDownListBoxForState = driver.findElement(By.id("stateChangeLoc"));
-        Select clickThisState = new Select(dropDownListBoxForState);
+    public void changeLocation1(String state, String city) {
+        changeLocationLinkL1.click();
+        Select clickThisState = new Select(stateChangeLocEl);
         clickThisState.selectByValue(state);
-
-        /*cityChangeLocEl.sendKeys(city);*/
-        WebElement dropDownListBoxForCity = driver.findElement(By.id("cityChangeLoc"));
-        Select clickThisCity = new Select(dropDownListBoxForCity);
+        Select clickThisCity = new Select(cityChangeLocEl);
         clickThisCity.selectByValue(city);
-
         changeLocationBtnEl.click();
     }
 
-    public void changeLocationWithZIP(String zipCode) {
+    public void changeLocation2(String zipCode) {
+        changeLocationLinkL1.click();
         zipCodeEl.sendKeys(zipCode);
+        addressChangeAC1.click();
         changeLocationBtnEl.click();
     }
 }
