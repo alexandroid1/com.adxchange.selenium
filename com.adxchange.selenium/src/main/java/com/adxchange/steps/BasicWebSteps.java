@@ -16,6 +16,8 @@ public class BasicWebSteps {
         this.pages = pages;
     }
 
+    /*---------location----------*/
+
     @Given("I navigate to testsystem")
     public void navigate() {
         pages.homePage().open();
@@ -36,8 +38,22 @@ public class BasicWebSteps {
     }
     @Then("I verify location2 as: $state,$city")
     public void verifySelectedLocation2(String state, String city) {
-        pages.homePage().verifySelectedLocation2(state, city);
+        pages.locationPopupPage().verifySelectedLocation2(state, city);
     }
+
+    /*---------login----------*/
+
+    @When("I login to the site under $email,$password")
+    public void whenILoginToTheSite(String email, String password) {
+        pages.loginPopupPage().whenILoginToTheSite(email,password);
+    }
+
+    @Then("I verify user name in welcomeBack as $firstName $lastName")
+    public void verifyWelcomeBack(String firstName, String lastName) {
+        pages.homePage().verifyWelcomeBack(firstName, lastName);
+    }
+
+    /*---------template elements----------*/
 
     @Then("I verify template elements")
     public void verify() {// verifying search element in google home page         
@@ -45,6 +61,8 @@ public class BasicWebSteps {
         driver.findElement(By.id("locationContainer")).isDisplayed();
         driver.findElement(By.tagName("footer")).isDisplayed();
     }
+
+    /*---------search----------*/
 
     @Then("I verify search $keyword")
     public void verifySearch(String keyword) {// verifying search element in google home page

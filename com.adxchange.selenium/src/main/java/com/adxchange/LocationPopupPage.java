@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -53,5 +55,18 @@ public class LocationPopupPage extends AbstractPage {
         zipCodeEl.sendKeys(zipCode);
         addressChangeAC1.click();
         changeLocationBtnEl.click();
+    }
+
+    public void verifySelectedLocation2(String state, String city) {
+        // assertEquals(city + ", " + state, locationContainerC2.getText());
+        Select clickThisState = new Select(stateChangeLocEl);
+        clickThisState.getFirstSelectedOption().getText();
+        assertEquals(state, clickThisState.getFirstSelectedOption().getText());
+
+        Select clickThisCity = new Select(cityChangeLocEl);
+        clickThisCity.getFirstSelectedOption().getText();
+        assertEquals(city, clickThisCity.getFirstSelectedOption().getText());
+
+      /*  assertEquals(city, cityChangeLocEl.getText());*/
     }
 }

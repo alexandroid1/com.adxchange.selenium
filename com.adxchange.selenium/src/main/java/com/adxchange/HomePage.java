@@ -4,7 +4,6 @@ import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
 
@@ -30,14 +29,8 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "locationContainer")
     private WebElement locationContainerC1;
 
-    @FindBy(how = How.ID, using = "locationContainer")
-    private WebElement locationContainerC2;
-
-    @FindBy(how = How.NAME, using = "stateChangeLoc")
-    private WebElement stateChangeLocEl;
-
-    @FindBy(how = How.NAME, using = "cityChangeLoc")
-    private WebElement cityChangeLocEl;
+    @FindBy(how = How.ID, using = "welcomeBack")
+    private WebElement welcomeBackWB1;
 
     public HomePage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -62,17 +55,7 @@ public class HomePage extends AbstractPage {
         assertEquals(city + ", " + state, locationContainerC1.getText());
     }
 
-    public void verifySelectedLocation2(String state, String city) {
-       // assertEquals(city + ", " + state, locationContainerC2.getText());
-        Select clickThisState = new Select(stateChangeLocEl);
-        clickThisState.getFirstSelectedOption().getText();
-        assertEquals(state, clickThisState.getFirstSelectedOption().getText());
-
-        Select clickThisCity = new Select(cityChangeLocEl);
-        clickThisCity.getFirstSelectedOption().getText();
-        assertEquals(city, clickThisCity.getFirstSelectedOption().getText());
-
-      /*  assertEquals(city, cityChangeLocEl.getText());*/
-
+    public void verifyWelcomeBack(String firstName, String lastName){
+        assertEquals("Welcome back" + firstName + " " + lastName, welcomeBackWB1.getText());
     }
 }

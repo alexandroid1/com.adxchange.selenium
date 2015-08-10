@@ -3,8 +3,6 @@ package com.adxchange;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.swing.*;
-
 /**
  * Created by IntelliJ IDEA.
  *
@@ -17,6 +15,7 @@ public class Pages {
     private final WebDriverProvider driverProvider;
     private HomePage home;
     private LocationPopupPage locationPopupPage;
+    private LoginPopupPage loginPopupPage;
 
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
@@ -37,5 +36,13 @@ public class Pages {
         }
         PageFactory.initElements(driverProvider.get(),  locationPopupPage);
         return locationPopupPage;
+    }
+
+    public LoginPopupPage loginPopupPage(){
+        if ( loginPopupPage == null ){
+            loginPopupPage = new LoginPopupPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  loginPopupPage);
+        return loginPopupPage;
     }
 }
