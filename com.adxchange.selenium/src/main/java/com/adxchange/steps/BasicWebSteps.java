@@ -6,11 +6,13 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class BasicWebSteps {
     public static WebDriver driver;
 
     public Pages pages;
+    public FirefoxProfile profile;
 
     public BasicWebSteps(Pages pages) {
         this.pages = pages;
@@ -42,9 +44,9 @@ public class BasicWebSteps {
         pages.locationPopupPage().verifySelectedLocationByZIP(state, city);
     }
 
-    @Given("I change location to fake location")
-    public void whenIChangeLocationToFakeLocation() {
-        pages.homePage().whenIChangeLocationToFakeLocation();
+    @Given("I change location to fake location from file $locationFileName")
+    public void whenIChangeLocationToFakeLocation(String locationFileName) {
+        pages.homePage().whenIChangeLocationToFakeLocation(locationFileName);
     }
 
     /*---------login----------*/
@@ -54,10 +56,6 @@ public class BasicWebSteps {
         pages.loginPopupPage().whenILoginToTheSite(email,password);
     }
 
-    @Then("I verify user name in welcomeBack as $firstName $lastName")
-    public void verifyWelcomeBack(String firstName, String lastName) {
-        pages.homePage().verifyWelcomeBack(firstName, lastName);
-    }
 
     /*---------template elements----------*/
 

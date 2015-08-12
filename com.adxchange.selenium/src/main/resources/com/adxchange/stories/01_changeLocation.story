@@ -8,5 +8,7 @@ Given I navigate to testsystem
 When I change location by ZIP to ZIP 85614
 Then I verify location by ZIP as: AZ,Green Valley
 
-Scenario: Fake location State,City and verify Address (optional)
-Given I change location to fake location
+Scenario: Fake location State,City and verify Address
+Given I navigate to testsystem
+And I change location to fake location from file NewYork.json
+Then I verify location by State,City as Center Drive New York,New York

@@ -1,6 +1,8 @@
 package com.adxchange;
 
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.PageFactory;
 
 /**
@@ -12,7 +14,7 @@ import org.openqa.selenium.support.PageFactory;
  */
 public class Pages {
 
-    private final WebDriverProvider driverProvider;
+    private WebDriverProvider driverProvider;
     private HomePage home;
     private LocationPopupPage locationPopupPage;
     private LoginPopupPage loginPopupPage;
@@ -31,6 +33,16 @@ public class Pages {
     }
 
     public LocationPopupPage locationPopupPage(){
+        if ( locationPopupPage == null ){
+            locationPopupPage = new LocationPopupPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  locationPopupPage);
+        return locationPopupPage;
+    }
+
+    // never used but may be implemented
+    public LocationPopupPage locationPopupPageFromProfile(FirefoxProfile profile){
+        driverProvider = (WebDriverProvider) new FirefoxDriver(profile);
         if ( locationPopupPage == null ){
             locationPopupPage = new LocationPopupPage(driverProvider);
         }

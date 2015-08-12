@@ -10,6 +10,8 @@ import org.openqa.selenium.support.How;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -65,31 +67,33 @@ public class HomePage extends AbstractPage {
         assertEquals("Welcome back" + firstName + " " + lastName, welcomeBackWB1.getText());
     }
 
-    public void whenIChangeLocationToFakeLocation(){
-        /*FirefoxBinary binary = new FirefoxBinary();*/
-
-        //reading firefoxProfileFolder filpath
+    public void whenIChangeLocationToFakeLocation(String locationFileName){
+        URL firefoxProfileFolderURL = HomePage.class.getResource("/firefoxProfile/" + "firefoxProfileFolder.txt");
+        URL locationFile = HomePage.class.getResource("/location/" + locationFileName);
         String firefoxProfileFolderStr = "";
         Scanner in = null;
         try {
-            in = new Scanner(new File("C:\\Dev\\firefoxProfileFolder.txt"));
+            in = new Scanner(new File(firefoxProfileFolderURL.toURI()));
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         while(in.hasNext())
             firefoxProfileFolderStr += in.nextLine();
         in.close();
-
-        /*File firefoxProfileFolder = new File("C:\\Users\\ALEX\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\nahd6ha2.default");*/
         File firefoxProfileFolder = new File(firefoxProfileFolderStr);
-
         FirefoxProfile profile = new FirefoxProfile(firefoxProfileFolder);
         profile.setPreference("geo.prompt.testing",true);
         profile.setPreference("geo.prompt.testing.allow", true);
-        profile.setPreference("geo.wifi.uri", "file:///C:/Dev/brussels.json");
+        try {
+            profile.setPreference("geo.wifi.uri", String.valueOf(locationFile.toURI()));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
         WebDriver driver = new FirefoxDriver(profile);
+        // "http://tsuser:QM7yams@www.theadxchange.com"
         driver.navigate().to(System.getProperty("qaHost"));
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
 }
