@@ -41,7 +41,7 @@ public class LocationPopupPage extends AbstractPage {
         super(driverProvider);
     }
 
-    public void changeLocation1(String state, String city) {
+    public void changeLocationByStateCity(String state, String city) {
         changeLocationLinkL1.click();
         Select clickThisState = new Select(stateChangeLocEl);
         clickThisState.selectByValue(state);
@@ -50,14 +50,14 @@ public class LocationPopupPage extends AbstractPage {
         changeLocationBtnEl.click();
     }
 
-    public void changeLocation2(String zipCode) {
+    public void changeLocationByZIP(String zipCode) {
         changeLocationLinkL1.click();
         zipCodeEl.sendKeys(zipCode);
         addressChangeAC1.click();
         changeLocationBtnEl.click();
     }
 
-    public void verifySelectedLocation2(String state, String city) {
+    public void verifySelectedLocationByZIP(String state, String city) {
         // assertEquals(city + ", " + state, locationContainerC2.getText());
         Select clickThisState = new Select(stateChangeLocEl);
         clickThisState.getFirstSelectedOption().getText();
