@@ -3,16 +3,18 @@ package com.adxchange;
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.Scanner;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
@@ -40,6 +42,14 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackWB1;
 
+    final static String OUTPUT_FILE_NAME = "C:\\Users\\ALEX\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\nahd6ha2.default\\user.js";
+    final static Charset ENCODING = StandardCharsets.UTF_8;
+
+    void writeSmallTextFile(List<String> aLines, String aFileName) throws IOException {
+        Path path = Paths.get(aFileName);
+        Files.write(path, aLines, ENCODING);
+    }
+
     public HomePage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -60,6 +70,9 @@ public class HomePage extends AbstractPage {
     }
 
     public void verifySelectedLocationByStateCity(String state, String city) {
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.textToBePresentInElement(locationContainerC1,city + ", " + state));
         assertEquals(city + ", " + state, locationContainerC1.getText());
     }
 
@@ -67,33 +80,4 @@ public class HomePage extends AbstractPage {
         assertEquals("Welcome back" + firstName + " " + lastName, welcomeBackWB1.getText());
     }
 
-    public void whenIChangeLocationToFakeLocation(String locationFileName){
-        URL firefoxProfileFolderURL = HomePage.class.getResource("/firefoxProfile/" + "firefoxProfileFolder.txt");
-        URL locationFile = HomePage.class.getResource("/location/" + locationFileName);
-        String firefoxProfileFolderStr = "";
-        Scanner in = null;
-        try {
-            in = new Scanner(new File(firefoxProfileFolderURL.toURI()));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        while(in.hasNext())
-            firefoxProfileFolderStr += in.nextLine();
-        in.close();
-        File firefoxProfileFolder = new File(firefoxProfileFolderStr);
-        FirefoxProfile profile = new FirefoxProfile(firefoxProfileFolder);
-        profile.setPreference("geo.prompt.testing",true);
-        profile.setPreference("geo.prompt.testing.allow", true);
-        try {
-            profile.setPreference("geo.wifi.uri", String.valueOf(locationFile.toURI()));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        WebDriver driver = new FirefoxDriver(profile);
-        // "http://tsuser:QM7yams@www.theadxchange.com"
-        driver.navigate().to(System.getProperty("qaHost"));
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
 }

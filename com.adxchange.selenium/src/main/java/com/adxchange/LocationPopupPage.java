@@ -1,12 +1,13 @@
 package com.adxchange;
 
 import org.jbehave.web.selenium.WebDriverProvider;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-
-import static org.junit.Assert.assertEquals;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by IntelliJ IDEA.
@@ -54,19 +55,10 @@ public class LocationPopupPage extends AbstractPage {
         changeLocationLinkL1.click();
         zipCodeEl.sendKeys(zipCode);
         addressChangeAC1.click();
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.textToBePresentInElement(stateChangeLocEl,"AZ"));
+        wait.until(ExpectedConditions.textToBePresentInElement(cityChangeLocEl,"Green Valley"));
         changeLocationBtnEl.click();
-    }
-
-    public void verifySelectedLocationByZIP(String state, String city) {
-        // assertEquals(city + ", " + state, locationContainerC2.getText());
-        Select clickThisState = new Select(stateChangeLocEl);
-        clickThisState.getFirstSelectedOption().getText();
-        assertEquals(state, clickThisState.getFirstSelectedOption().getText());
-
-        Select clickThisCity = new Select(cityChangeLocEl);
-        clickThisCity.getFirstSelectedOption().getText();
-        assertEquals(city, clickThisCity.getFirstSelectedOption().getText());
-
-      /*  assertEquals(city, cityChangeLocEl.getText());*/
     }
 }
