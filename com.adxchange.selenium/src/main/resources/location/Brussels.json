@@ -1,0 +1,11 @@
+{
+    "status": "OK",
+    "accuracy": 10.0,
+    "location": {
+        "lat": 50.850780,
+        "lng": 4.358138,
+        "latitude": 50.850780,
+        "longitude": 4.358138,
+        "accuracy": 10.0
+    }
+}
