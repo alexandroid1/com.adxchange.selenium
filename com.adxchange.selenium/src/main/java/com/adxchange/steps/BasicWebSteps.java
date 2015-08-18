@@ -37,9 +37,14 @@ public class BasicWebSteps {
 
     /*---------login----------*/
 
-    @When("I login to the site under $email,$password")
-    public void whenILoginToTheSite(String email, String password) {
-        pages.loginPopupPage().whenILoginToTheSite(email,password);
+    @When("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
+    public void whenIChangeUsernamePasswordByPostYourAdClicking(String username, String password) {
+        pages.loginPopupPage().whenIChangeUsernamePasswordByPostYourAdClicking(username, password);
+    }
+
+    @Then("I verify \"Welcome back\" as $firstName,$lastName")
+    public void verifyWelcomeBackAsFirstNameLastName(String firstName, String lastName) {
+        pages.postingMyPostsPage().verifyWelcomeBackAsFirstNameLastName(firstName, lastName);
     }
 
     /*---------search----------*/

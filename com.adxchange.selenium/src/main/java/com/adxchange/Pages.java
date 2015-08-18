@@ -16,6 +16,7 @@ public class Pages {
     private HomePage home;
     private LocationPopupPage locationPopupPage;
     private LoginPopupPage loginPopupPage;
+    private PostingMyPostsPage postingMyPostsPage;
 
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
@@ -44,5 +45,13 @@ public class Pages {
         }
         PageFactory.initElements(driverProvider.get(),  loginPopupPage);
         return loginPopupPage;
+    }
+
+    public PostingMyPostsPage postingMyPostsPage(){
+        if ( postingMyPostsPage == null ){
+            postingMyPostsPage = new PostingMyPostsPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  postingMyPostsPage);
+        return postingMyPostsPage;
     }
 }

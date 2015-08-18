@@ -8,13 +8,6 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
@@ -42,20 +35,12 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackWB1;
 
-    final static String OUTPUT_FILE_NAME = "C:\\Users\\ALEX\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\nahd6ha2.default\\user.js";
-    final static Charset ENCODING = StandardCharsets.UTF_8;
-
-    void writeSmallTextFile(List<String> aLines, String aFileName) throws IOException {
-        Path path = Paths.get(aFileName);
-        Files.write(path, aLines, ENCODING);
-    }
-
     public HomePage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
     public void open() {
-        // "http://tsuser:QM7yams@www.theadxchange.com"
+        // "https://tsuser:QM7yams@www.theadxchange.com/?gws_rd=ssl"
         get(System.getProperty("qaHost"));
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
