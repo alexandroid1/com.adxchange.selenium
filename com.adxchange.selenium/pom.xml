@@ -122,6 +122,10 @@
                             <ignoreFailureInView>false</ignoreFailureInView>
                             <systemProperties>
                                 <property>
+                                    <name>java.awt.headless</name>
+                                    <value>true</value>
+                                </property>
+                                <property>
                                     <name>qaHost</name>
                                     <value>http://tsuser:QM7yams@www.theadxchange.com</value>
                                 </property>
