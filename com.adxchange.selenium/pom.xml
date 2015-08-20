@@ -13,7 +13,7 @@
         <jbehave.web.version>3.6-beta-2</jbehave.web.version>
         <fluent.selenium.version>1.14.5</fluent.selenium.version>
         <selenium.version>2.40.0</selenium.version>
-        <embeddables>**/*Stories.java</embeddables>
+        <embeddables>**/*Stories*.java</embeddables>
     </properties>
 
     <dependencies>
@@ -117,8 +117,19 @@
                                 <include>${embeddables}</include>
                             </includes>
                             <excludes/>
+                            <executorsClass>org.jbehave.core.embedder.executors.SameThreadExecutors</executorsClass>
                             <ignoreFailureInStories>true</ignoreFailureInStories>
                             <ignoreFailureInView>false</ignoreFailureInView>
+                            <systemProperties>
+                                <property>
+                                    <name>qaHost</name>
+                                    <value>http://tsuser:QM7yams@www.theadxchange.com</value>
+                                </property>
+                                <property>
+                                    <name>JBEHAVE_WEBDRIVER_FIREFOX_PROFILE</name>
+                                    <value>default</value>
+                                </property>
+                            </systemProperties>
                             <threads>1</threads>
                             <metaFilters>
                                 <metaFilter></metaFilter>
@@ -129,6 +140,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                        <version>11.0.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
