@@ -136,7 +136,7 @@
                             </systemProperties>
                             <threads>1</threads>
                             <metaFilters>
-                                <metaFilter></metaFilter>
+                                <metaFilter>-skip -pending</metaFilter>
                             </metaFilters>
                         </configuration>
                         <goals>
