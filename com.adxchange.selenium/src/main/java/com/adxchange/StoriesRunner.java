@@ -48,38 +48,11 @@ public class StoriesRunner extends JUnitStories {
 
 
     public StoriesRunner() {
-        /*configuredEmbedder().embedderControls().doGenerateViewAfterStories(true).doIgnoreFailunreInStories(true)
-                .doIgnoreFailureInView(true).useThreads(2).useStoryTimeoutInSecs(60);*/
         if ( lifecycleSteps instanceof PerStoriesWebDriverSteps ){
             configuredEmbedder().useExecutorService(MoreExecutors.sameThreadExecutor());
         }
-        FirefoxProfile profile = new FirefoxProfile();
-        // enable geolocation
-        profile.setPreference("geo.prompt.testing", true);
-        profile.setPreference("geo.prompt.testing.allow", true);
     }
 
-    
-   /* @Override
-    public Configuration configuration() {
-        Class<? extends Embeddable> embeddableClass = this.getClass();
-        // Start from default ParameterConverters instance
-        ParameterConverters parameterConverters = new ParameterConverters();
-        // factory to allow parameter conversion and loading from external resources (used by StoryParser too)
-        ExamplesTableFactory examplesTableFactory = new ExamplesTableFactory(new LocalizedKeywords(), new LoadFromClasspath(embeddableClass), parameterConverters);
-        // add custom converters
-        parameterConverters.addConverters(new DateConverter(new SimpleDateFormat("yyyy-MM-dd")),
-                new ExamplesTableConverter(examplesTableFactory));
-        return new MostUsefulConfiguration()
-            .useStoryLoader(new LoadFromClasspath(embeddableClass))
-            .useStoryParser(new RegexStoryParser(examplesTableFactory)) 
-            .useStoryReporterBuilder(new StoryReporterBuilder()
-                .withCodeLocation(CodeLocations.codeLocationFromClass(embeddableClass))
-                .withDefaultFormats()
-                .withFormats(CONSOLE, TXT, HTML, XML))
-            .useParameterConverters(parameterConverters);
-    }
-*/
     @Override
     public Configuration configuration() {
         Class<? extends Embeddable> embeddableClass = this.getClass();
@@ -94,11 +67,6 @@ public class StoriesRunner extends JUnitStories {
                         .withFormats(CONSOLE, TXT));
     }
 
-  /*  @Override
-    public InjectableStepsFactory stepsFactory() {
-        return new InstanceStepsFactory(configuration(), new BasicWebSteps());
-    }
-*/
     @Override
     protected List<String> storyPaths() {
         return new StoryFinder().findPaths(codeLocationFromClass(this.getClass()), "**/*.story", "**/excluded*.story");
@@ -112,13 +80,5 @@ public class StoriesRunner extends JUnitStories {
                 new BasicWebSteps(pages),
                 lifecycleSteps,
                 new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
-    }
-
-    public static class SameThreadEmbedder extends Embedder {
-
-        public SameThreadEmbedder() {
-            useExecutorService(MoreExecutors.sameThreadExecutor());
-        }
-
     }
 }
