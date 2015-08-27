@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
  *         Time: 5:37 PM
  */
 public class HomePage extends AbstractPage {
-    @FindBy(how = How.NAME, using = "quickSearchKeywords")
+    @FindBy(how = How.ID, using = "quickSearchKeywords")
     private WebElement quickSearchKeywordsEl;
     
     @FindBy(how = How.ID, using = "searching")
