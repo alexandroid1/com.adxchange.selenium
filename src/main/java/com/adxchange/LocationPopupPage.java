@@ -35,9 +35,6 @@ public class LocationPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "addressChange")
     private WebElement addressChangeAC1;
 
-    @FindBy(how = How.CLASS_NAME, using = "close")
-    private WebElement closeWindow1;
-
     public LocationPopupPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
