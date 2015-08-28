@@ -29,7 +29,7 @@ public class LocationPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "go")
     private WebElement changeLocationBtnEl;
 
-    @FindBy(how = How.CLASS_NAME, using = "changeLocationLink")
+    @FindBy(how = How.ID, using = "changeLocationLink")
     private WebElement changeLocationLinkL1;
 
     @FindBy(how = How.ID, using = "addressChange")
