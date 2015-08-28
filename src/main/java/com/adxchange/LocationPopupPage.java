@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *         Time: 5:37 PM
  */
 public class LocationPopupPage extends AbstractPage {
-    @FindBy(how = How.NAME, using = "stateChangeLoc")
+    @FindBy(how = How.ID, using = "stateChangeLoc")
     private WebElement stateChangeLocEl;
 
     @FindBy(how = How.NAME, using = "cityChangeLoc")
