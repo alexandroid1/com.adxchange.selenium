@@ -22,16 +22,13 @@ public class LoginPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "userNameLogged")
     private WebElement userNameLoggedInputI2;
 
-    /*@FindBy(how = How.NAME, using = "password")
-    private WebElement passwordInputI2;*/
-
     @FindBy(how = How.ID, using = "passWordNotLogged")
     private WebElement passWordNotLoggedInputI1;
 
     @FindBy(how = How.ID, using = "passWordLogged")
     private WebElement passWordLoggedInputI2;
 
-    @FindBy(how = How.CLASS_NAME, using = "login_buttonarea_button")
+    @FindBy(how = How.ID, using = "loginButtonAreaButton")
     private WebElement loginSubmitBtnB2;
 
     public LoginPopupPage(WebDriverProvider driverProvider) {
@@ -44,5 +41,4 @@ public class LoginPopupPage extends AbstractPage {
         passWordNotLoggedInputI1.sendKeys(password);
         loginSubmitBtnB2.click();
     }
-
 }
