@@ -41,6 +41,7 @@ public class HomePage extends AbstractPage {
 
     public void open() {
         // "https://tsuser:QM7yams@www.theadxchange.com/?gws_rd=ssl"
+        //
         get(System.getProperty("qaHost"));
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
