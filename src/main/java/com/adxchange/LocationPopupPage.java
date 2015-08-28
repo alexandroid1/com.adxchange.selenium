@@ -20,7 +20,7 @@ public class LocationPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "stateChangeLoc")
     private WebElement stateChangeLocEl;
 
-    @FindBy(how = How.NAME, using = "cityChangeLoc")
+    @FindBy(how = How.ID, using = "cityChangeLoc")
     private WebElement cityChangeLocEl;
 
     @FindBy(how = How.ID, using = "zipCode")
