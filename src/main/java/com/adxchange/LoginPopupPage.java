@@ -16,17 +16,20 @@ public class LoginPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "loginPopUpButton")
     private WebElement postYourAdBtnB3;
 
-   /* @FindBy(how = How.NAME, using = "username")
-    private WebElement usernameInputI1;*/
-
     @FindBy(how = How.ID, using = "userNameNotLogged")
     private WebElement userNameNotLoggedInputI1;
 
     @FindBy(how = How.ID, using = "userNameLogged")
     private WebElement userNameLoggedInputI2;
 
-    @FindBy(how = How.NAME, using = "password")
-    private WebElement passwordInputI2;
+    /*@FindBy(how = How.NAME, using = "password")
+    private WebElement passwordInputI2;*/
+
+    @FindBy(how = How.ID, using = "passWordNotLogged")
+    private WebElement passWordNotLoggedInputI1;
+
+    @FindBy(how = How.ID, using = "passWordLogged")
+    private WebElement passWordLoggedInputI2;
 
     @FindBy(how = How.CLASS_NAME, using = "login_buttonarea_button")
     private WebElement loginSubmitBtnB2;
@@ -38,7 +41,7 @@ public class LoginPopupPage extends AbstractPage {
     public void whenIChangeUsernamePasswordByPostYourAdClicking(String username, String password){
         postYourAdBtnB3.click();
         userNameNotLoggedInputI1.sendKeys(username);
-        passwordInputI2.sendKeys(password);
+        passWordNotLoggedInputI1.sendKeys(password);
         loginSubmitBtnB2.click();
     }
 
