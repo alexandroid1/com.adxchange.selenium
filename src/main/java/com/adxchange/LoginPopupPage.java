@@ -13,7 +13,7 @@ public class LoginPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "logging")
     private WebElement loggingBtnB1;
 
-    @FindBy(how = How.ID, using = "loginPopUpButton")
+    @FindBy(how = How.ID, using = "loginPopUpButtonHeader")
     private WebElement postYourAdBtnB3;
 
     @FindBy(how = How.ID, using = "userNameNotLogged")
