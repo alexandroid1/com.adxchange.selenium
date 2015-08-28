@@ -26,7 +26,7 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "searching")
     private WebElement quickSearchButtonEl;
 
-    @FindBy(how = How.CLASS_NAME, using = "changeLocationLink")
+    @FindBy(how = How.ID, using = "changeLocationLink")
     private WebElement changeLocationLink;
 
     @FindBy(how = How.ID, using = "locationContainer")
