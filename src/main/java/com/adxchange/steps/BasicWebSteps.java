@@ -47,9 +47,19 @@ public class BasicWebSteps {
         pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
     }
 
+    @When("I click \"LOG OUT\" button")
+    public void whenIclickLogOutButton() {
+        pages.homePage().whenIclickLogOutButton();
+    }
+
     @Then("I verify \"Welcome back\" as $firstName,$lastName")
     public void verifyWelcomeBackAsFirstNameLastName(String firstName, String lastName) {
         pages.postingMyPostsPage().verifyWelcomeBackAsFirstNameLastName(firstName, lastName);
+    }
+
+    @Then("I verify that label \"LOG OUT\" changed to \"SIGNUP\"")
+    public void verifyThatLabelLogOutChangedToSignUp() {
+        pages.homePage().verifyThatLabelLogOutChangedToSignUp();
     }
 
     /*---------search----------*/

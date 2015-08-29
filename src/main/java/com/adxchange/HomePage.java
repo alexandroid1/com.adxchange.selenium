@@ -35,6 +35,12 @@ public class HomePage extends AbstractPage {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackWB1;
 
+    @FindBy(how = How.ID, using = "loggout")
+    private WebElement logOutBtnB1;
+
+    @FindBy(how = How.ID, using = "signUp")
+    private WebElement signUpBtnB1;
+
     public HomePage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -58,12 +64,22 @@ public class HomePage extends AbstractPage {
     public void verifySelectedLocationByStateCity(String state, String city) {
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.textToBePresentInElement(locationContainerC1,city + ", " + state));
+        wait.until(ExpectedConditions.textToBePresentInElement(locationContainerC1, city + ", " + state));
         assertEquals(city + ", " + state, locationContainerC1.getText());
     }
 
-    public void verifyWelcomeBack(String firstName, String lastName){
+/*    public void verifyWelcomeBack(String firstName, String lastName){
         assertEquals("Welcome back" + firstName + " " + lastName, welcomeBackWB1.getText());
+    }*/
+
+    public void whenIclickLogOutButton(){
+        logOutBtnB1.click();
+    }
+
+    public void verifyThatLabelLogOutChangedToSignUp(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.elementToBeClickable(signUpBtnB1));
     }
 
 }
