@@ -42,6 +42,11 @@ public class BasicWebSteps {
         pages.loginPopupPage().whenIChangeUsernamePasswordByPostYourAdClicking(username, password);
     }
 
+    @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
+    public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password) {
+        pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
+    }
+
     @Then("I verify \"Welcome back\" as $firstName,$lastName")
     public void verifyWelcomeBackAsFirstNameLastName(String firstName, String lastName) {
         pages.postingMyPostsPage().verifyWelcomeBackAsFirstNameLastName(firstName, lastName);

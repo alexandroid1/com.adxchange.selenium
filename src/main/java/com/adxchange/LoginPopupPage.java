@@ -13,8 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class LoginPopupPage extends AbstractPage {
 
-    @FindBy(how = How.ID, using = "logging")
-    private WebElement loggingBtnB1;
+    @FindBy(how = How.ID, using = "signUp")
+    private WebElement signUpBtnB1;
 
     @FindBy(how = How.ID, using = "loginPopUpButtonHeader")
     private WebElement postYourAdBtnB3;
@@ -40,6 +40,13 @@ public class LoginPopupPage extends AbstractPage {
 
     public void whenIChangeUsernamePasswordByPostYourAdClicking(String username, String password){
         postYourAdBtnB3.click();
+        userNameNotLoggedInputI1.sendKeys(username);
+        passWordNotLoggedInputI1.sendKeys(password);
+        loginSubmitBtnB2.click();
+    }
+
+    public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password){
+        signUpBtnB1.click();
         userNameNotLoggedInputI1.sendKeys(username);
         passWordNotLoggedInputI1.sendKeys(password);
         loginSubmitBtnB2.click();
