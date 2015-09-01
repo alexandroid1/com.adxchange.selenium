@@ -17,7 +17,7 @@ public class FaceBookPage extends AbstractPage {
     private WebElement passInputI2;
 
     @FindBy(how = How.ID, using = "loginbutton")
-    private WebElement loginbuttonBtnB1;
+    private WebElement loginButtonBtnB1;
 
     public FaceBookPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -26,7 +26,7 @@ public class FaceBookPage extends AbstractPage {
     public void loginToFacebook(String username, String password){
         emailInputI1.sendKeys(username);
         passInputI2.sendKeys(password);
-        loginbuttonBtnB1.click();
+        loginButtonBtnB1.click();
     }
 
 }
