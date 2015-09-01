@@ -57,5 +57,10 @@ public class LoginPopupPage extends AbstractPage {
         loginSubmitBtnB2.click();
     }
 
+    public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb(){
+        signUpBtnB1.click();
+
+    }
+
 
 }

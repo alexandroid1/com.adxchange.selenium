@@ -62,7 +62,14 @@ public class BasicWebSteps {
         pages.homePage().verifyThatLabelLogOutChangedToSignUp();
     }
 
-    /*---------external login----------*/
+    /*---------external logOut----------*/
+
+    @When("I logout from site if user was register by social web")
+    public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb() {
+        pages.loginPopupPage().whenILogoutFromSiteIfUserWasRegisterBySocialWeb();
+    }
+
+    /*---------external logIn----------*/
 
     @When("I login to site by Facebook as $username,$password")
     public void whenILoginToSiteByFacebook(String username, String password) {

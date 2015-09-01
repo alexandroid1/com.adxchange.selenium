@@ -1,7 +1,7 @@
 Scenario: External logout from site if user was register by social web
 Given I navigate to testsystem
-When I click "SIGNUP" button and logout from site if user was register by social web
-Then I click "SIGNUP" button and verify that I logged out from social web
+When I logout from site if user was register by social web
+Then I verify that I logged out from social web
 
 Scenario: Login to site as Username,Password by "POST YOUR AD" click and verify "Welcome back" as Aditya,Choudhuri
 Given I navigate to testsystem
