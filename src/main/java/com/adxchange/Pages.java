@@ -17,6 +17,7 @@ public class Pages {
     private LocationPopupPage locationPopupPage;
     private LoginPopupPage loginPopupPage;
     private PostingMyPostsPage postingMyPostsPage;
+    private FaceBookPage faceBookPage;
 
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
@@ -53,5 +54,13 @@ public class Pages {
         }
         PageFactory.initElements(driverProvider.get(),  postingMyPostsPage);
         return postingMyPostsPage;
+    }
+
+    public FaceBookPage faceBookPage(){
+        if ( faceBookPage == null ){
+            faceBookPage = new FaceBookPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  faceBookPage);
+        return faceBookPage;
     }
 }

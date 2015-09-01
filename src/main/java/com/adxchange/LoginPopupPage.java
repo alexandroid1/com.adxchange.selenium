@@ -13,6 +13,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 public class LoginPopupPage extends AbstractPage {
 
+    public Pages pages;
+
+    /*-------for login story----------*/
+
     @FindBy(how = How.ID, using = "signUp")
     private WebElement signUpBtnB1;
 
@@ -34,6 +38,14 @@ public class LoginPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "loginButtonAreaButton")
     private WebElement loginSubmitBtnB2;
 
+    /*-------for external login story----------*/
+
+    @FindBy(how = How.ID, using = "facebookIdImg")
+    private WebElement facebookIdImgBtnB4;
+
+
+
+
     public LoginPopupPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -54,6 +66,7 @@ public class LoginPopupPage extends AbstractPage {
 
     public void whenILoginToSiteByFacebook(String username, String password){
         signUpBtnB1.click();
-
+        facebookIdImgBtnB4.click();
+        pages.faceBookPage().loginToFacebook(username, password);
     }
 }
