@@ -21,7 +21,8 @@ public class FaceBookPage extends AbstractPage {
     }
 
     public void loginToFacebook(String username, String password){
-
+        emailInputI1.sendKeys(username);
+        passInputI2.sendKeys(password);
     }
 
 }
