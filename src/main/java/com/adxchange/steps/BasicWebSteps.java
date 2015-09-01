@@ -66,7 +66,7 @@ public class BasicWebSteps {
 
     @When("I login to site by Facebook as $username,$password")
     public void whenILoginToSiteByFacebook(String username, String password) {
-        pages.loginPopupPage().whenILoginToSiteByFacebook(username, password);
+        pages.faceBookPage().whenILoginToSiteByFacebook(username, password);
     }
 
     /*---------search----------*/
