@@ -51,4 +51,9 @@ public class LoginPopupPage extends AbstractPage {
         passWordNotLoggedInputI1.sendKeys(password);
         loginSubmitBtnB2.click();
     }
+
+    public void whenILoginToSiteByFacebook(String username, String password){
+        signUpBtnB1.click();
+
+    }
 }

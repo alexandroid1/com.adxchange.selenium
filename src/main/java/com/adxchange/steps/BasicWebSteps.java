@@ -62,6 +62,13 @@ public class BasicWebSteps {
         pages.homePage().verifyThatLabelLogOutChangedToSignUp();
     }
 
+    /*---------external login----------*/
+
+    @When("I login to site by Facebook as $username,$password")
+    public void whenILoginToSiteByFacebook(String username, String password) {
+        pages.loginPopupPage().whenILoginToSiteByFacebook(username, password);
+    }
+
     /*---------search----------*/
 
     @Then("I verify search $keyword")
