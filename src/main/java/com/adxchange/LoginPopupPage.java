@@ -8,6 +8,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by ALEX on 10.08.2015.
  */
@@ -36,7 +38,8 @@ public class LoginPopupPage extends AbstractPage {
     @FindBy(how = How.ID, using = "loginButtonAreaButton")
     private WebElement loginSubmitBtnB2;
 
-
+    @FindBy(how = How.ID, using = "clickHere")
+    private WebElement clickHereLinkL1;
 
 
     public LoginPopupPage(WebDriverProvider driverProvider) {
@@ -59,7 +62,13 @@ public class LoginPopupPage extends AbstractPage {
 
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb(){
         signUpBtnB1.click();
+        if (clickHereLinkL1.isDisplayed()){
+            clickHereLinkL1.click();
+        }
+    }
 
+    public void verifyThatILoggedOutFromSocialWeb(){
+        assertEquals(userNameNotLoggedInputI1.isDisplayed(),true);
     }
 
 
