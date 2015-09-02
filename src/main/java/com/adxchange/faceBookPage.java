@@ -35,6 +35,9 @@ public class FaceBookPage extends AbstractPage {
     @FindBy(how = How.CLASS_NAME, using = "_42ft _4jy0 layerConfirm _51_n autofocus uiOverlayButton _4jy3 _4jy1 selected _51sy")
     private WebElement okButtonBtnB2;
 
+    @FindBy(how = How.ID, using = "welcomeBack")
+    private WebElement welcomeBackBtnB1;
+
     public FaceBookPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -42,8 +45,9 @@ public class FaceBookPage extends AbstractPage {
     public void whenILoginToSiteByFacebook(String username, String password){
         signUpBtnB1.click();
         facebookIdImgBtnB4.click();
-        loginToFacebook(username, password);
-
+        if (! welcomeBackBtnB1.isDisplayed()) {
+            loginToFacebook(username, password);
+        }
     }
 
     public void loginToFacebook(String username, String password){

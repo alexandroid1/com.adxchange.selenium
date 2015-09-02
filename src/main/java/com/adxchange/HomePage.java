@@ -79,6 +79,7 @@ public class HomePage extends AbstractPage {
     public void verifyThatLabelLogOutChangedToSignUp(){
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(signUpBtnB1));
         wait.until(ExpectedConditions.elementToBeClickable(signUpBtnB1));
     }
 
