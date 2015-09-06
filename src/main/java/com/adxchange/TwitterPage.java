@@ -34,7 +34,8 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "emailAddress")
     private WebElement emailAddressInputI3;
 
-
+    @FindBy(how = How.ID, using = "firstName")
+    private WebElement firstNameInputI4;
 
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -50,6 +51,8 @@ public class TwitterPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
         emailAddressInputI3.sendKeys(username);
+        firstNameInputI4.sendKeys("Donald");
+
 
 
     }
