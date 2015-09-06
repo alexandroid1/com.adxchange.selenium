@@ -69,6 +69,11 @@ public class BasicWebSteps {
         pages.faceBookPage().whenILoginToSiteByFacebook(username, password);
     }
 
+    @When("I login to site by Twitter as $username,$password")
+    public void whenILoginToSiteByTwitter(String username, String password) {
+        pages.faceBookPage().whenILoginToSiteByTwitter(username, password);
+    }
+
     /*---------external logOut----------*/
 
     @When("I logout from site if user was register by social web")

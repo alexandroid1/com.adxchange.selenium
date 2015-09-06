@@ -16,12 +16,8 @@ public class FaceBookPage extends AbstractPage {
     @FindBy(how = How.ID, using = "signUp")
     private WebElement signUpBtnB1;
 
-    /*-------for external login story----------*/
-
     @FindBy(how = How.ID, using = "facebookIdImg")
     private WebElement facebookIdImgBtnB4;
-
-    /*-----------------loginToFacebook-------------------------*/
 
     @FindBy(how = How.ID, using = "email")
     private WebElement emailInputI1;

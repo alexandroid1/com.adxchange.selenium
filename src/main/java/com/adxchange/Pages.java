@@ -18,6 +18,7 @@ public class Pages {
     private LoginPopupPage loginPopupPage;
     private PostingMyPostsPage postingMyPostsPage;
     private FaceBookPage faceBookPage;
+    private TwitterPage twitterPage;
 
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
@@ -62,5 +63,13 @@ public class Pages {
         }
         PageFactory.initElements(driverProvider.get(),  faceBookPage);
         return faceBookPage;
+    }
+
+    public TwitterPage twitterPage(){
+        if ( twitterPage == null ){
+            twitterPage = new TwitterPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  twitterPage);
+        return twitterPage;
     }
 }

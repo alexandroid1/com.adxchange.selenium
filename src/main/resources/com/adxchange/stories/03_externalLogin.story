@@ -9,6 +9,8 @@ When I logout from site if user was register by social web
 Then I verify that I logged out from social web
 
 Scenario: Login to site by Twitter as adxchange123@gmail.com,741852963qazwsx
+META:
+-pending
 Given I navigate to testsystem
 When I login to site by Twitter as adxchange123@gmail.com,741852963qazwsx
 Then I verify "Welcome back" as Donald,Frantum
