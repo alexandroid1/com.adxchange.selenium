@@ -37,6 +37,15 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "firstName")
     private WebElement firstNameInputI4;
 
+    @FindBy(how = How.ID, using = "lastName")
+    private WebElement lastNameInputI5;
+
+    @FindBy(how = How.ID, using = "dp1441549794158")
+    private WebElement datePickerInputDP1;
+
+    @FindBy(how = How.LINK_TEXT, using = "1")
+    private WebElement uiDatePickerWeekEndUDP1;
+
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -47,11 +56,15 @@ public class TwitterPage extends AbstractPage {
         userNameInputI1.sendKeys(username);
         passwordInputI2.sendKeys(password);
         allowButtonBtnB3.click();
+        /*---socialLoginCompleteContainer auth---*/
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
         emailAddressInputI3.sendKeys(username);
         firstNameInputI4.sendKeys("Donald");
+        lastNameInputI5.sendKeys("Frantum");
+        datePickerInputDP1.click();
+        uiDatePickerWeekEndUDP1.click();
 
 
 
