@@ -28,6 +28,14 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "allow")
     private WebElement allowButtonBtnB3;
 
+    @FindBy(how = How.ID, using = "socialLoginCompleteContainer")
+    private WebElement socialLoginCompleteContainerC1;
+
+    @FindBy(how = How.ID, using = "emailAddress")
+    private WebElement emailAddressInputI3;
+
+
+
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -38,6 +46,10 @@ public class TwitterPage extends AbstractPage {
         userNameInputI1.sendKeys(username);
         passwordInputI2.sendKeys(password);
         allowButtonBtnB3.click();
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
+        emailAddressInputI3.sendKeys(username);
 
 
     }

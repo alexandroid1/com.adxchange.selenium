@@ -71,7 +71,7 @@ public class BasicWebSteps {
 
     @When("I login to site by Twitter as $username,$password")
     public void whenILoginToSiteByTwitter(String username, String password) {
-        pages.faceBookPage().whenILoginToSiteByTwitter(username, password);
+        pages.twitterPage().whenILoginToSiteByTwitter(username, password);
     }
 
     /*---------external logOut----------*/
