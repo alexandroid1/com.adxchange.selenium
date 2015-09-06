@@ -46,6 +46,12 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.LINK_TEXT, using = "1")
     private WebElement uiDatePickerWeekEndUDP1;
 
+    @FindBy(how = How.ID, using = "user_gender")
+    private WebElement userGenderSelectS1;
+
+    @FindBy(how = How.LINK_TEXT, using = "Male")
+    private WebElement userGenderOptionOpt1;
+
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -64,8 +70,9 @@ public class TwitterPage extends AbstractPage {
         firstNameInputI4.sendKeys("Donald");
         lastNameInputI5.sendKeys("Frantum");
         datePickerInputDP1.click();
-        uiDatePickerWeekEndUDP1.click();
-
+        uiDatePickerWeekEndUDP1.click(); //01/09/2002
+        userGenderSelectS1.click();
+        userGenderOptionOpt1.click();
 
 
     }
