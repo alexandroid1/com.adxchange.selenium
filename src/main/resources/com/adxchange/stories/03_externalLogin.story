@@ -3,6 +3,11 @@ Given I navigate to testsystem
 When I login to site by Facebook as donald@theadxchange.com,@Rahul123
 Then I verify "Welcome back" as Donald,Frantum
 
+Scenario: Logout from site by "LOG OUT" click
+Given I navigate to testsystem
+When I click "LOG OUT" button
+Then I verify that label "LOG OUT" changed to "SIGNUP"
+
 Scenario: External logout from site if user was register by social web
 Given I navigate to testsystem
 When I logout from site if user was register by social web
