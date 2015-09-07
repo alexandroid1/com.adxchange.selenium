@@ -41,7 +41,7 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "lastName")
     private WebElement lastNameInputI5;
 
-    @FindBy(how = How.CLASS_NAME, using = "social-dob hasDatepicker")
+    @FindBy(how = How.NAME, using = "dob")
     private WebElement datePickerInputDP1;
 
     @FindBy(how = How.LINK_TEXT, using = "1")
@@ -50,8 +50,7 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "user_gender")
     private WebElement userGenderSelectS1;
 
-    @FindBy(how = How.LINK_TEXT, using = "Male")
-    private WebElement userGenderOptionOpt1;
+
 
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -70,15 +69,10 @@ public class TwitterPage extends AbstractPage {
         emailAddressInputI3.sendKeys(username);
         firstNameInputI4.sendKeys("Donald");
         lastNameInputI5.sendKeys("Frantum");
-        Select clickThisDate = new Select(datePickerInputDP1);
-        clickThisDate.selectByValue("1");
+        datePickerInputDP1.click();
+        uiDatePickerWeekEndUDP1.click(); //01/09/2002
         Select clickThisGender = new Select(userGenderSelectS1);
-        clickThisGender.selectByValue("Male");
-        //datePickerInputDP1.click();
-        //uiDatePickerWeekEndUDP1.click(); //01/09/2002
-        //userGenderSelectS1.click();
-        //userGenderOptionOpt1.click();
-
+        clickThisGender.selectByValue("male");
 
     }
 
