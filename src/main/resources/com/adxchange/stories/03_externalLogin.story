@@ -18,4 +18,4 @@ META:
 -pending
 Given I navigate to testsystem
 When I login to site by Twitter as adxchange123@gmail.com,741852963qazwsx
-Then I verify "Welcome back" as Donald,Frantum
+Then I verify "Welcome back" as adxchangeDonald,Frantum

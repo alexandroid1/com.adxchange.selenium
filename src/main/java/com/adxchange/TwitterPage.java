@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by ALEX on 06.09.2015.
  */
@@ -53,6 +55,11 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "submitBtnB1")
     private WebElement submitBtnB1;
 
+    @FindBy(how = How.ID, using = "welcomeBack")
+    private WebElement welcomeBackBtnB1;
+
+    @FindBy(how = How.CLASS_NAME, using = "_42ft _4jy0 layerConfirm _51_n autofocus uiOverlayButton _4jy3 _4jy1 selected _51sy")
+    private WebElement okButtonBtnB2;
 
 
     public TwitterPage(WebDriverProvider driverProvider) {
@@ -62,10 +69,18 @@ public class TwitterPage extends AbstractPage {
     public void whenILoginToSiteByTwitter(String username, String password){
         signUpBtnB1.click();
         twitterIdImgBtnB2.click();
-        userNameInputI1.sendKeys(username);
-        passwordInputI2.sendKeys(password);
+        manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        if (userNameInputI1.isDisplayed()) {
+            userNameInputI1.sendKeys(username);
+            passwordInputI2.sendKeys(password);
+        }
         allowButtonBtnB3.click();
-        /*---socialLoginCompleteContainer auth---*/
+        if (! welcomeBackBtnB1.isDisplayed()) {
+            socialLoginCompleteContainerAuth(username, password);
+        }
+    }
+
+    public void socialLoginCompleteContainerAuth(String username, String password){
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
@@ -77,5 +92,8 @@ public class TwitterPage extends AbstractPage {
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
+        if (okButtonBtnB2.isEnabled()){
+            okButtonBtnB2.click();
+        }
     }
 }
