@@ -50,6 +50,9 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "user_gender")
     private WebElement userGenderSelectS1;
 
+    @FindBy(how = How.ID, using = "submitBtnB1")
+    private WebElement submitBtnB1;
+
 
 
     public TwitterPage(WebDriverProvider driverProvider) {
@@ -73,10 +76,6 @@ public class TwitterPage extends AbstractPage {
         uiDatePickerWeekEndUDP1.click(); //01/09/2002
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
-
+        submitBtnB1.click();
     }
-
-
-
-
 }
