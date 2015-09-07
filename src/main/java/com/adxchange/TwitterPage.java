@@ -58,9 +58,6 @@ public class TwitterPage extends AbstractPage {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackBtnB1;
 
-    @FindBy(how = How.CLASS_NAME, using = "_42ft _4jy0 layerConfirm _51_n autofocus uiOverlayButton _4jy3 _4jy1 selected _51sy")
-    private WebElement okButtonBtnB2;
-
 
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -92,8 +89,6 @@ public class TwitterPage extends AbstractPage {
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
-        if (okButtonBtnB2.isEnabled()){
-            okButtonBtnB2.click();
-        }
+
     }
 }

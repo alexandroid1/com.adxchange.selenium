@@ -1,3 +1,5 @@
+!-- ------------------------ Login Story -----------------------------------
+
 Scenario: External logout from site if user was register by social web
 Given I navigate to testsystem
 When I logout from site if user was register by social web

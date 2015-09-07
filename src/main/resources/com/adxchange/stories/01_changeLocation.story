@@ -1,3 +1,5 @@
+!-- ------------------------ Change Location Story -----------------------------------
+
 Scenario: Change location to State,City AK,Adak and verify result
 Given I navigate to testsystem
 When I change location by State,City to AK,Adak
