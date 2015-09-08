@@ -75,13 +75,8 @@ public class FaceBookPage extends AbstractPage {
     public void whenILoginToSiteByFacebook(String username, String password) {
         signUpBtnB1.click();
         facebookIdImgBtnB4.click();
-
-        WebDriver driver = getDriverProvider().get();
-        WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.elementToBeClickable(emailInputI1));
         loginToFacebook(username, password);
     }
-
 
     public void loginToFacebook(String username, String password){
         WebDriver driver = getDriverProvider().get();
@@ -94,23 +89,11 @@ public class FaceBookPage extends AbstractPage {
         if (okButtonBtnB2.isDisplayed()){
             okButtonBtnB2.click();
         }
-        if (socialLoginCompleteContainerC1.isDisplayed()) {
-            socialLoginCompleteContainerAuth(username, password);
-        }else
-        {
-            wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
-            socialLoginCompleteContainerAuth(username, password);
-        }
-        if (enteredEmailHasAlreadyRegisteredOkBtnB2.isDisplayed()) {
-            enteredEmailHasAlreadyRegisteredOkBtnB2.click();
-            Random random = new Random();
-            String numStr=String.valueOf(random.nextInt(2147483646));
-            socialLoginCompleteContainerAuth("Donald" + numStr + "@gmail.com", password);
-        }
+        wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
+        socialLoginCompleteContainerAuth(username, password);
         if (profileDetailIsUpdatedClickHereLinkL1.isDisplayed()) {
             profileDetailIsUpdatedClickHereLinkL1.click();
         }
-
     }
 
     public void socialLoginCompleteContainerAuth(String username, String password){
@@ -126,5 +109,4 @@ public class FaceBookPage extends AbstractPage {
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
     }
-
 }

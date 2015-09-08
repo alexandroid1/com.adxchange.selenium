@@ -89,6 +89,5 @@ public class TwitterPage extends AbstractPage {
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
-
     }
 }
