@@ -18,6 +18,9 @@ public class PostingMyPostsPage extends AbstractPage  {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackBtnB1;
 
+    @FindBy(how = How.ID, using = "loginPopUpButtonHeader")
+    private WebElement postYourAdBtnB3;
+
     public PostingMyPostsPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -27,5 +30,9 @@ public class PostingMyPostsPage extends AbstractPage  {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.textToBePresentInElement(welcomeBackBtnB1, firstName + " " + lastName));
         assertEquals("Welcome back " + firstName + " " + lastName, welcomeBackBtnB1.getText());
+    }
+
+    public void clickPostYourAdButton(){
+        postYourAdBtnB3.click();
     }
 }

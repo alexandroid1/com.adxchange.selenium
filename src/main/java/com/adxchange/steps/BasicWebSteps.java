@@ -96,4 +96,12 @@ public class BasicWebSteps {
     public void verifySearch(String keyword) {// verifying search element in google home page
         pages.homePage().search(keyword);
     }
+
+    /*----------- Post_AD Story --------------------*/
+
+    @Given("I click \"POST YOUR AD\" button")
+    public void clickPostYourAdButton() {
+        pages.postingMyPostsPage().clickPostYourAdButton();
+    }
+
 }
