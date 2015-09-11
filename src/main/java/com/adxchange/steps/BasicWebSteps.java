@@ -16,6 +16,7 @@ public class BasicWebSteps {
     /*---------location----------*/
 
     @Given("I navigate to testsystem")
+    @When("I navigate to testsystem")
     public void navigate() {
         pages.homePage().open();
     }
@@ -37,9 +38,10 @@ public class BasicWebSteps {
 
     /*---------login----------*/
 
+    @Given("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
     @When("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
-    public void whenIChangeUsernamePasswordByPostYourAdClicking(String username, String password) {
-        pages.loginPopupPage().whenIChangeUsernamePasswordByPostYourAdClicking(username, password);
+    public void changeUsernamePasswordByPostYourAdClicking(String username, String password) {
+        pages.loginPopupPage().changeUsernamePasswordByPostYourAdClicking(username, password);
     }
 
     @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
@@ -48,8 +50,9 @@ public class BasicWebSteps {
     }
 
     @When("I click \"LOG OUT\" button")
-    public void whenIclickLogOutButton() {
-        pages.homePage().whenIclickLogOutButton();
+    @Then("I click \"LOG OUT\" button")
+    public void clickLogOutButton() {
+        pages.homePage().clickLogOutButton();
     }
 
     @Then("I verify \"Welcome back\" as $firstName,$lastName")
@@ -75,7 +78,7 @@ public class BasicWebSteps {
     }
 
     /*---------external logOut----------*/
-
+    @Given("I logout from site if user was register by social web")
     @When("I logout from site if user was register by social web")
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb() {
         pages.loginPopupPage().whenILogoutFromSiteIfUserWasRegisterBySocialWeb();

@@ -46,7 +46,7 @@ public class LoginPopupPage extends AbstractPage {
         super(driverProvider);
     }
 
-    public void whenIChangeUsernamePasswordByPostYourAdClicking(String username, String password){
+    public void changeUsernamePasswordByPostYourAdClicking(String username, String password){
         postYourAdBtnB3.click();
         userNameNotLoggedInputI1.sendKeys(username);
         passWordNotLoggedInputI1.sendKeys(password);

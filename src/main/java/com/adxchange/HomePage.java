@@ -72,7 +72,7 @@ public class HomePage extends AbstractPage {
         assertEquals("Welcome back" + firstName + " " + lastName, welcomeBackWB1.getText());
     }*/
 
-    public void whenIclickLogOutButton(){
+    public void clickLogOutButton(){
         logOutBtnB1.click();
     }
 
