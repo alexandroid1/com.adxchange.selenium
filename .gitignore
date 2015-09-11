@@ -1,4 +1,3 @@
-target
-/.gitignore
+/target
 /.idea
 /*.iml
