@@ -55,6 +55,7 @@ public class BasicWebSteps {
         pages.homePage().clickLogOutButton();
     }
 
+    @Given("I verify \"Welcome back\" as $firstName,$lastName")
     @Then("I verify \"Welcome back\" as $firstName,$lastName")
     public void verifyWelcomeBackAsFirstNameLastName(String firstName, String lastName) {
         pages.postingMyPostsPage().verifyWelcomeBackAsFirstNameLastName(firstName, lastName);

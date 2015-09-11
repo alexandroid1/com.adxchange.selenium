@@ -26,6 +26,7 @@ And I click "LOG OUT" button
 Scenario: Login by cookie
 Given I navigate to testsystem
 And I change Username,Password by "POST YOUR AD" clicking to ac@juventustech.com,juventus
+And I verify "Welcome back" as Aditya,Choudhuri
 When I navigate to testsystem
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
