@@ -44,6 +44,12 @@ public class BasicWebSteps {
         pages.loginPopupPage().changeUsernamePasswordByPostYourAdClicking(username, password);
     }
 
+    @Given("I click \"POST YOUR AD\" button")
+    @When("I click \"POST YOUR AD\" button")
+    public void clickPostYourAdButton() {
+        pages.loginPopupPage().clickPostYourAdButton();
+    }
+
     @Given("I change Username,Password to $username,$password")
     @When("I change Username,Password to $username,$password")
     public void changeUsernamePassword(String username, String password) {
@@ -112,10 +118,7 @@ public class BasicWebSteps {
 
     /*----------- Post_AD Story --------------------*/
 
-    @Given("I click \"POST YOUR AD\" button")
-    public void clickPostYourAdButton() {
-        pages.loginPopupPage().clickPostYourAdButton();
-    }
+
 
     @Given("I choose category as $categoryName,$value")
     public void chooseCategory(String categoryName,String value) {
