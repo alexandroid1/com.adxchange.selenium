@@ -76,7 +76,6 @@ public class LoginPopupPage extends AbstractPage {
     }
 
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb(){
-        clickSignupButton();
         if (clickHereLinkL1.isDisplayed()){
             clickHereLinkL1.click();
         }

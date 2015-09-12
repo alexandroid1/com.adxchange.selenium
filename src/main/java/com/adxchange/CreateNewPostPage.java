@@ -22,7 +22,7 @@ public class CreateNewPostPage extends AbstractPage {
         super(driverProvider);
     }
 
-    public void chooseCategory(String categoryName,String value){
+    public void chooseCategory(String categoryName){
         realEstateLinkL1.click();
     }
 }

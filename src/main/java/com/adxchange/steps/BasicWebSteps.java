@@ -110,6 +110,7 @@ public class BasicWebSteps {
     }
 
     @Given("I verify that I logged out from social web")
+    @When("I verify that I logged out from social web")
     @Then("I verify that I logged out from social web")
     public void verifyThatILoggedOutFromSocialWeb() {
         pages.loginPopupPage().verifyThatILoggedOutFromSocialWeb();
@@ -124,11 +125,9 @@ public class BasicWebSteps {
 
     /*----------- Post_AD Story --------------------*/
 
-
-
-    @Given("I choose category as $categoryName,$value")
-    public void chooseCategory(String categoryName,String value) {
-        pages.createNewPostPage().chooseCategory(categoryName,value);
+    @Given("I choose category as $categoryName")
+    public void chooseCategory(String categoryName) {
+        pages.createNewPostPage().chooseCategory(categoryName);
     }
 
 }
