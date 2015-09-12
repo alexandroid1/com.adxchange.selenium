@@ -29,7 +29,7 @@ And I verify that label "LOG OUT" changed to "SIGNUP"
 
 Scenario: Login to site as Username,Password by "POST YOUR AD" click and verify "Welcome back" as Aditya,Choudhuri
 Given I navigate to testsystem
-When I click "SIGNUP" button
+When I click "POST YOUR AD" button
 And I logout from site if user was register by social web
 And I verify that I logged out from social web
 And I change Username,Password to ac@juventustech.com,juventus
