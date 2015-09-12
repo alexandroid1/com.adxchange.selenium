@@ -44,6 +44,12 @@ public class BasicWebSteps {
         pages.loginPopupPage().changeUsernamePasswordByPostYourAdClicking(username, password);
     }
 
+    @Given("I change Username,Password to $username,$password")
+    @When("I change Username,Password to $username,$password")
+    public void changeUsernamePassword(String username, String password) {
+        pages.loginPopupPage().changeUsernamePassword(username, password);
+    }
+
     @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
     public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password) {
         pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
@@ -85,6 +91,7 @@ public class BasicWebSteps {
         pages.loginPopupPage().whenILogoutFromSiteIfUserWasRegisterBySocialWeb();
     }
 
+    @Given("I verify that I logged out from social web")
     @Then("I verify that I logged out from social web")
     public void verifyThatILoggedOutFromSocialWeb() {
         pages.loginPopupPage().verifyThatILoggedOutFromSocialWeb();
@@ -102,6 +109,11 @@ public class BasicWebSteps {
     @Given("I click \"POST YOUR AD\" button")
     public void clickPostYourAdButton() {
         pages.postingMyPostsPage().clickPostYourAdButton();
+    }
+
+    @Given("I choose category as $categoryName,$value")
+    public void chooseCategory(String categoryName,String value) {
+        pages.createNewPostPage().chooseCategory(categoryName,value);
     }
 
 }

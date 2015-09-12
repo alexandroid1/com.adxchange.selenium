@@ -7,6 +7,10 @@ Then I verify that I logged out from social web
 
 Scenario: Logout from site by "LOG OUT" click
 Given I navigate to testsystem
+And I click "POST YOUR AD" button
+And I change Username,Password to ac@juventustech.com,juventus
+
+
 And I change Username,Password by "POST YOUR AD" clicking to ac@juventustech.com,juventus
 When I click "LOG OUT" button
 Then I verify that label "LOG OUT" changed to "SIGNUP"
