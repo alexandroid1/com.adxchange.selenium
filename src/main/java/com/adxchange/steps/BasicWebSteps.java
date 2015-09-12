@@ -50,6 +50,12 @@ public class BasicWebSteps {
         pages.loginPopupPage().changeUsernamePassword(username, password);
     }
 
+    @Given("I click \"Login\" button")
+    @When("I click \"Login\" button")
+    public void clickLoginButton() {
+        pages.loginPopupPage().clickLoginButton();
+    }
+
     @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
     public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password) {
         pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
@@ -108,7 +114,7 @@ public class BasicWebSteps {
 
     @Given("I click \"POST YOUR AD\" button")
     public void clickPostYourAdButton() {
-        pages.postingMyPostsPage().clickPostYourAdButton();
+        pages.loginPopupPage().clickPostYourAdButton();
     }
 
     @Given("I choose category as $categoryName,$value")
