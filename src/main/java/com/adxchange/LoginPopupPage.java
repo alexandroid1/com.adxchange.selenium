@@ -46,6 +46,10 @@ public class LoginPopupPage extends AbstractPage {
         super(driverProvider);
     }
 
+    public void clickSignupButton(){
+        signUpBtnB1.click();
+    }
+
     public void clickPostYourAdButton(){
         postYourAdBtnB3.click();
     }
@@ -61,18 +65,18 @@ public class LoginPopupPage extends AbstractPage {
 
     public void changeUsernamePasswordByPostYourAdClicking(String username, String password){
         clickPostYourAdButton();
-        changeUsernamePassword(username,password);
+        changeUsernamePassword(username, password);
         clickLoginButton();
     }
 
     public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password){
-        signUpBtnB1.click();
+        clickSignupButton();
         changeUsernamePassword(username, password);
         clickLoginButton();
     }
 
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb(){
-        signUpBtnB1.click();
+        clickSignupButton();
         if (clickHereLinkL1.isDisplayed()){
             clickHereLinkL1.click();
         }

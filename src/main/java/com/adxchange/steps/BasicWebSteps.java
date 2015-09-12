@@ -62,6 +62,12 @@ public class BasicWebSteps {
         pages.loginPopupPage().clickLoginButton();
     }
 
+    @Given("I click \"SIGNUP\" button")
+    @When("I click \"SIGNUP\" button")
+    public void clickSignupButton() {
+        pages.loginPopupPage().clickSignupButton();
+    }
+
     @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
     public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password) {
         pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
