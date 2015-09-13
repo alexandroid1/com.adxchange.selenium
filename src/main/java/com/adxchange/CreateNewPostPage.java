@@ -18,17 +18,21 @@ import static org.junit.Assert.assertEquals;
  */
 public class CreateNewPostPage extends AbstractPage {
 
-/*    @FindBy(how = How.ID, using = "attr-r-1-2")
-    private WebElement realEstateLinkL1;*/
+    @FindBy(how = How.ID, using = "attr-r-1-2")
+    private WebElement realEstateLinkL1;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
     public void chooseCategory(String categoryName){
-       // realEstateLinkL1.click();
         WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(realEstateLinkL1));
+        wait.until(ExpectedConditions.elementToBeClickable(realEstateLinkL1));
+        realEstateLinkL1.click();
+/*        WebDriver driver = getDriverProvider().get();
         List<WebElement> radio = driver.findElements(By.id("attr-r-1-2"));
-        radio.get(0).click();
+        radio.get(0).click();*/
     }
 }
