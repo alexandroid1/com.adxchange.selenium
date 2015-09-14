@@ -21,15 +21,33 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-r-1-2")
     private WebElement realEstateLinkL1;
 
+    @FindBy(how = How.ID, using = "nextButtonBtn1")
+    private WebElement nextButtonBtn1;
+
+    @FindBy(how = How.ID, using = "attr-r-11")
+    private WebElement LeftLayoutLinkL2;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
-    public void chooseCategory(String categoryName){
+    public void chooseCategory(){
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(realEstateLinkL1));
         wait.until(ExpectedConditions.elementToBeClickable(realEstateLinkL1));
         realEstateLinkL1.click();
+    }
+
+    public void clickNextButton(){
+        nextButtonBtn1.click();
+    }
+
+    public void chooseLayoutAsLeft(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(LeftLayoutLinkL2));
+        wait.until(ExpectedConditions.elementToBeClickable(LeftLayoutLinkL2));
+        LeftLayoutLinkL2.click();
     }
 }

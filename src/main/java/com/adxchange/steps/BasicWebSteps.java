@@ -125,9 +125,19 @@ public class BasicWebSteps {
 
     /*----------- Post_AD Story --------------------*/
 
-    @Given("I choose category as $categoryName")
-    public void chooseCategory(String categoryName) {
-        pages.createNewPostPage().chooseCategory(categoryName);
+    @Given("I choose category as Real Estate")
+    public void chooseCategory() {
+        pages.createNewPostPage().chooseCategory();
+    }
+
+    @Given("I click \"Next\" button")
+    public void clickNextButton() {
+        pages.createNewPostPage().clickNextButton();
+    }
+
+    @Given("I choose layout as Left")
+    public void chooseLayoutAsLeft() {
+        pages.createNewPostPage().chooseLayoutAsLeft();
     }
 
 }
