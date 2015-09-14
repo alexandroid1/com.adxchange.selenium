@@ -39,7 +39,7 @@ And I click "Next" button1
 And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Studio
-And I select Transaction Type as Room/Share
+And I select Transaction Type as Trade
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -62,7 +62,7 @@ And I click "Next" button1
 And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Condo
-And I select Transaction Type as Temporary/Sublet
+And I select Transaction Type as Vacation
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

@@ -50,7 +50,7 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-20")
     private WebElement propertyTypeSelectS1;
 
-    @FindBy(how = How.ID, using = "attr-o-172")
+    @FindBy(how = How.XPATH, using = "//select[@data-bvalidator-msg='Please provide value for Transaction Type']")
     private WebElement transactionTypeSelectS2;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
