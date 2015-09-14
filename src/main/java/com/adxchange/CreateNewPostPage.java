@@ -117,7 +117,7 @@ public class CreateNewPostPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(propertyTypeSelectS1));
         wait.until(ExpectedConditions.elementToBeClickable(propertyTypeSelectS1));
-        Select clickThisState = new Select(propertyTypeSelectS1);
-        clickThisState.selectByValue(propertyType);
+        Select clickThispropertyType = new Select(propertyTypeSelectS1);
+        clickThispropertyType.selectByVisibleText(propertyType);
     }
 }
