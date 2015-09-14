@@ -145,4 +145,14 @@ public class BasicWebSteps {
         pages.createNewPostPage().chooseLayoutAsPanoramic();
     }
 
+    @Given("I choose layout as Right")
+    public void chooseLayoutAsRight() {
+        pages.createNewPostPage().chooseLayoutAsRight();
+    }
+
+    @Given("I select Property Type as $propertyType")
+    public void selectPropertyType(String propertyType) {
+        pages.createNewPostPage().selectPropertyType(propertyType);
+    }
+
 }

@@ -30,6 +30,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-r-12")
     private WebElement PanoramicLayoutLinkL3;
 
+    @FindBy(how = How.ID, using = "attr-r-13")
+    private WebElement RightLayoutLinkL4;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -60,5 +63,13 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(PanoramicLayoutLinkL3));
         wait.until(ExpectedConditions.elementToBeClickable(PanoramicLayoutLinkL3));
         PanoramicLayoutLinkL3.click();
+    }
+
+    public void chooseLayoutAsRight(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(RightLayoutLinkL4));
+        wait.until(ExpectedConditions.elementToBeClickable(RightLayoutLinkL4));
+        RightLayoutLinkL4.click();
     }
 }
