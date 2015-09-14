@@ -140,4 +140,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().chooseLayoutAsLeft();
     }
 
+    @Given("I choose layout as Panoramic")
+    public void chooseLayoutAsPanoramic() {
+        pages.createNewPostPage().chooseLayoutAsPanoramic();
+    }
+
 }
