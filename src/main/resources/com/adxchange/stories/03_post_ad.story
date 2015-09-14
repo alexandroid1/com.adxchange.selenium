@@ -8,7 +8,7 @@ And I change Username,Password to ac@juventustech.com,juventus
 And I click "Login" button
 And I verify "Welcome back" as Aditya,Choudhuri
 And I click "POST YOUR AD" button
-!-- And I choose category as Real Estate
+And I choose category as Real Estate
 
 
 

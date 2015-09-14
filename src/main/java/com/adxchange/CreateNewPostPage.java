@@ -31,8 +31,5 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(realEstateLinkL1));
         wait.until(ExpectedConditions.elementToBeClickable(realEstateLinkL1));
         realEstateLinkL1.click();
-/*        WebDriver driver = getDriverProvider().get();
-        List<WebElement> radio = driver.findElements(By.id("attr-r-1-2"));
-        radio.get(0).click();*/
     }
 }

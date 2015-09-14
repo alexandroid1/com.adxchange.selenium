@@ -78,7 +78,7 @@ public class Pages {
         if ( createNewPostPage == null ){
             createNewPostPage = new CreateNewPostPage(driverProvider);
         }
-        PageFactory.initElements(driverProvider.get(),  twitterPage);
+        PageFactory.initElements(driverProvider.get(),  createNewPostPage);
         return createNewPostPage;
     }
 }
