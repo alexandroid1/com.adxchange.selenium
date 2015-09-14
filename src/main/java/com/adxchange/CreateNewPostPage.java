@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -32,6 +33,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     @FindBy(how = How.ID, using = "attr-r-13")
     private WebElement RightLayoutLinkL4;
+
+    @FindBy(how = How.ID, using = "attr-o-20")
+    private WebElement propertyTypeSelectS1;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -71,5 +75,14 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(RightLayoutLinkL4));
         wait.until(ExpectedConditions.elementToBeClickable(RightLayoutLinkL4));
         RightLayoutLinkL4.click();
+    }
+
+    public void selectPropertyType(String propertyType){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(propertyTypeSelectS1));
+        wait.until(ExpectedConditions.elementToBeClickable(propertyTypeSelectS1));
+        Select clickThisState = new Select(propertyTypeSelectS1);
+        clickThisState.selectByValue(propertyType);
     }
 }
