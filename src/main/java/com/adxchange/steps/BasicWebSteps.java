@@ -160,4 +160,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectPropertyType(propertyType);
     }
 
+    @Given("I select Transaction Type as $transactionType")
+    public void selectTransactionType(String transactionType) {
+        pages.createNewPostPage().selectTransactionType(transactionType);
+    }
+
 }

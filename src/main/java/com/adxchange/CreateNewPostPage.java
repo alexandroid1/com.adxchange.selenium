@@ -50,6 +50,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-20")
     private WebElement propertyTypeSelectS1;
 
+    @FindBy(how = How.ID, using = "attr-o-172")
+    private WebElement transactionTypeSelectS2;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -117,7 +120,16 @@ public class CreateNewPostPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(propertyTypeSelectS1));
         wait.until(ExpectedConditions.elementToBeClickable(propertyTypeSelectS1));
-        Select clickThispropertyType = new Select(propertyTypeSelectS1);
-        clickThispropertyType.selectByVisibleText(propertyType);
+        Select clickThisPropertyType = new Select(propertyTypeSelectS1);
+        clickThisPropertyType.selectByVisibleText(propertyType);
+    }
+
+    public void selectTransactionType(String transactionType){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(transactionTypeSelectS2));
+        wait.until(ExpectedConditions.elementToBeClickable(transactionTypeSelectS2));
+        Select clickThisTransactionType = new Select(transactionTypeSelectS2);
+        clickThisTransactionType.selectByVisibleText(transactionType);
     }
 }
