@@ -130,9 +130,14 @@ public class BasicWebSteps {
         pages.createNewPostPage().chooseCategory();
     }
 
-    @Given("I click \"Next\" button")
-    public void clickNextButton() {
-        pages.createNewPostPage().clickNextButton();
+    @Given("I click \"Next\" button1")
+    public void clickNextButton1() {
+        pages.createNewPostPage().clickNextButton1();
+    }
+
+    @Given("I click \"Next\" button2")
+    public void clickNextButton2() {
+        pages.createNewPostPage().clickNextButton2();
     }
 
     @Given("I choose layout as Left")

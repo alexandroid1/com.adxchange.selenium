@@ -2,6 +2,7 @@ package com.adxchange;
 
 import org.jbehave.web.selenium.WebDriverProvider;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,8 +23,20 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-r-1-2")
     private WebElement realEstateLinkL1;
 
-    @FindBy(how = How.ID, using = "nextButtonBtn1")
-    private WebElement nextButtonBtn1;
+/*    @FindBy(how = How.ID, using = "nextButtonBtn1")
+    private WebElement nextButtonBtnB1;*/
+
+/*    @FindBy(how = How.XPATH, using = "//button[@id='nextButtonBtn1']")
+    private WebElement nextButtonBtnB1;*/
+
+/*    @FindBy(how = How.XPATH, using = "//button[@class='rectangular-button next-tab']")
+    private WebElement nextButtonBtnB1;*/
+
+    @FindBy(how = How.XPATH, using = "//button[@value='tabs-1']")
+    private WebElement nextButtonBtnB1;
+
+    @FindBy(how = How.XPATH, using = "//button[@value='tabs-2']")
+    private WebElement nextButtonBtnB2;
 
     @FindBy(how = How.ID, using = "attr-r-11")
     private WebElement LeftLayoutLinkL2;
@@ -49,8 +62,30 @@ public class CreateNewPostPage extends AbstractPage {
         realEstateLinkL1.click();
     }
 
-    public void clickNextButton(){
-        nextButtonBtn1.click();
+    public void clickNextButton1(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight," +
+                "document.body.scrollHeight,document.documentElement.clientHeight));");
+
+        wait.until(ExpectedConditions.visibilityOf(nextButtonBtnB1));
+        wait.until(ExpectedConditions.elementToBeClickable(nextButtonBtnB1));
+        nextButtonBtnB1.click();
+    }
+
+    public void clickNextButton2(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight," +
+                "document.body.scrollHeight,document.documentElement.clientHeight));");
+
+        wait.until(ExpectedConditions.visibilityOf(nextButtonBtnB2));
+        wait.until(ExpectedConditions.elementToBeClickable(nextButtonBtnB2));
+        nextButtonBtnB2.click();
     }
 
     public void chooseLayoutAsLeft(){
