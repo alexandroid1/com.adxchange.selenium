@@ -23,10 +23,10 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-r-1-2")
     private WebElement realEstateLinkL1;
 
-    @FindBy(how = How.XPATH, using = "//button[@value='tabs-1']")
+    @FindBy(how = How.XPATH, using = ".//div[1]/div[4]/div[1]/button")
     private WebElement nextButtonBtnB1;
 
-    @FindBy(how = How.XPATH, using = "//button[@value='tabs-2']")
+    @FindBy(how = How.XPATH, using = ".//div[2]/div[4]/div[1]/button")
     private WebElement nextButtonBtnB2;
 
     @FindBy(how = How.ID, using = "attr-r-11")
@@ -60,7 +60,7 @@ public class CreateNewPostPage extends AbstractPage {
         super(driverProvider);
     }
 
-    public void chooseCategory(){
+    public void chooseCategory() {
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(realEstateLinkL1));
