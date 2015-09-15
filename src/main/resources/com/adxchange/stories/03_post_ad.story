@@ -19,6 +19,7 @@ And I select Property Type as Single Family Home
 And I select Transaction Type as Lease
 And I change Title to Title1
 And I change Address to Address1
+And I change Suite to Suite1
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -44,6 +45,7 @@ And I select Property Type as Studio
 And I select Transaction Type as Trade
 And I change Title to Title2
 And I change Address to Address2
+And I change Suite to Suite2
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -69,6 +71,7 @@ And I select Property Type as Condo
 And I select Transaction Type as Vacation
 And I change Title to Title3
 And I change Address to Address3
+And I change Suite to Suite3
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -94,6 +97,7 @@ And I select Property Type as Single Family Home
 And I select Transaction Type as Rent
 And I change Title to Title4
 And I change Address to Address4
+And I change Suite to Suite4
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -119,6 +123,7 @@ And I select Property Type as Studio
 And I select Transaction Type as Sale
 And I change Title to Title5
 And I change Address to Address5
+And I change Suite to Suite5
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -144,6 +149,7 @@ And I select Property Type as Condo
 And I select Transaction Type as Short Sale
 And I change Title to Title6
 And I change Address to Address6
+And I change Suite to Suite6
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -169,6 +175,7 @@ And I select Property Type as Single Family Home
 And I select Transaction Type as Foreclosure
 And I change Title to Title7
 And I change Address to Address7
+And I change Suite to Suite7
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -194,6 +201,7 @@ And I select Property Type as Studio
 And I select Transaction Type as Auction
 And I change Title to Title8
 And I change Address to Address8
+And I change Suite to Suite8
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -219,6 +227,7 @@ And I select Property Type as Condo
 And I select Transaction Type as Rent-2-Own
 And I change Title to Title9
 And I change Address to Address9
+And I change Suite to Suite9
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

@@ -171,8 +171,13 @@ public class BasicWebSteps {
     }
 
     @Given("I change Address to $address")
-    public void changeAddress(String address) {
+         public void changeAddress(String address) {
         pages.createNewPostPage().changeAddress(address);
+    }
+
+    @Given("I change Suite to $suite")
+    public void changeSuite(String suite) {
+        pages.createNewPostPage().changeSuite(suite);
     }
 
 }

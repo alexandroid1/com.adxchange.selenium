@@ -23,15 +23,6 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-r-1-2")
     private WebElement realEstateLinkL1;
 
-/*    @FindBy(how = How.ID, using = "nextButtonBtn1")
-    private WebElement nextButtonBtnB1;*/
-
-/*    @FindBy(how = How.XPATH, using = "//button[@id='nextButtonBtn1']")
-    private WebElement nextButtonBtnB1;*/
-
-/*    @FindBy(how = How.XPATH, using = "//button[@class='rectangular-button next-tab']")
-    private WebElement nextButtonBtnB1;*/
-
     @FindBy(how = How.XPATH, using = "//button[@value='tabs-1']")
     private WebElement nextButtonBtnB1;
 
@@ -58,6 +49,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     @FindBy(how = How.ID, using = "attr-o-26")
     private WebElement changeAddressInputI2;
+
+    @FindBy(how = How.ID, using = "attr-o-27")
+    private WebElement changeSuiteInputI3;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -145,5 +139,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void changeAddress(String address){
         changeAddressInputI2.sendKeys(address);
+    }
+
+    public void changeSuite(String suite){
+        changeSuiteInputI3.sendKeys(suite);
     }
 }
