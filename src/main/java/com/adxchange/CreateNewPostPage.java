@@ -56,6 +56,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-29")
     private WebElement stateSelectS3;
 
+    @FindBy(how = How.ID, using = "attr-o-28")
+    private WebElement citySelectS3;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -151,5 +154,10 @@ public class CreateNewPostPage extends AbstractPage {
     public void selectState(String state){
         Select clickThisTransactionType = new Select(stateSelectS3);
         clickThisTransactionType.selectByVisibleText(state);
+    }
+
+    public void selectCity(String city){
+        Select clickThisTransactionType = new Select(citySelectS3);
+        clickThisTransactionType.selectByVisibleText(city);
     }
 }

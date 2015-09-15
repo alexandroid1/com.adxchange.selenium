@@ -185,4 +185,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectState(state);
     }
 
+    @Given("I select City as $city")
+    public void selectCity(String city) {
+        pages.createNewPostPage().selectCity(city);
+    }
+
 }
