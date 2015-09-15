@@ -56,6 +56,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-15")
     private WebElement changeTitleInputI1;
 
+    @FindBy(how = How.ID, using = "attr-o-26")
+    private WebElement changeAddressInputI2;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -138,5 +141,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void changeTitle(String title){
         changeTitleInputI1.sendKeys(title);
+    }
+
+    public void changeAddress(String address){
+        changeAddressInputI2.sendKeys(address);
     }
 }

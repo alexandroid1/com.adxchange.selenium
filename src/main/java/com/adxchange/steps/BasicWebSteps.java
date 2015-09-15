@@ -170,4 +170,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().changeTitle(title);
     }
 
+    @Given("I change Address to $address")
+    public void changeAddress(String address) {
+        pages.createNewPostPage().changeAddress(address);
+    }
+
 }
