@@ -59,6 +59,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-28")
     private WebElement citySelectS3;
 
+    @FindBy(how = How.ID, using = "attr-o-30")
+    private WebElement changeZipPostalCodeInputI4;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -152,12 +155,16 @@ public class CreateNewPostPage extends AbstractPage {
     }
 
     public void selectState(String state){
-        Select clickThisTransactionType = new Select(stateSelectS3);
-        clickThisTransactionType.selectByVisibleText(state);
+        Select clickThisState = new Select(stateSelectS3);
+        clickThisState.selectByVisibleText(state);
     }
 
     public void selectCity(String city){
-        Select clickThisTransactionType = new Select(citySelectS3);
-        clickThisTransactionType.selectByVisibleText(city);
+        Select clickThisCity = new Select(citySelectS3);
+        clickThisCity.selectByVisibleText(city);
+    }
+
+    public void changeZipPostalCode(String zipPostal){
+        changeZipPostalCodeInputI4.sendKeys(zipPostal);
     }
 }

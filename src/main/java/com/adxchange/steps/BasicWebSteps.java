@@ -190,4 +190,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectCity(city);
     }
 
+    @Given("I change Zip/Postal Code to $zipPostal")
+    public void changeZipPostalCode(String zipPostal) {
+        pages.createNewPostPage().changeZipPostalCode(zipPostal);
+    }
+
 }

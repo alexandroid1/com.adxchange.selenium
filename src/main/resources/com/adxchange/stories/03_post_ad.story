@@ -22,6 +22,7 @@ And I change Address to Address1
 And I change Suite to Suite1
 And I select State as AA
 And I select City as Apo
+And I change Zip/Postal Code to Zip1
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -50,6 +51,7 @@ And I change Address to Address2
 And I change Suite to Suite2
 And I select State as AE
 And I select City as Fpo
+And I change Zip/Postal Code to Zip2
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -78,6 +80,7 @@ And I change Address to Address3
 And I change Suite to Suite3
 And I select State as MB
 And I select City as Altona
+And I change Zip/Postal Code to Zip3
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -106,6 +109,7 @@ And I change Address to Address4
 And I change Suite to Suite4
 And I select State as MN
 And I select City as Akeley
+And I change Zip/Postal Code to Zip4
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -134,6 +138,7 @@ And I change Address to Address5
 And I change Suite to Suite5
 And I select State as ND
 And I select City as Abercrombie
+And I change Zip/Postal Code to Zip5
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -162,6 +167,7 @@ And I change Address to Address6
 And I change Suite to Suite6
 And I select State as NS
 And I select City as Advocate Harbour
+And I change Zip/Postal Code to Zip6
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -190,6 +196,7 @@ And I change Address to Address7
 And I change Suite to Suite7
 And I select State as NY
 And I select City as Yulan
+And I change Zip/Postal Code to Zip7
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -218,6 +225,7 @@ And I change Address to Address8
 And I change Suite to Suite8
 And I select State as OR
 And I select City as Adams
+And I change Zip/Postal Code to Zip8
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -246,6 +254,7 @@ And I change Address to Address9
 And I change Suite to Suite9
 And I select State as SD
 And I select City as Aberdeen
+And I change Zip/Postal Code to Zip9
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
