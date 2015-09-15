@@ -17,6 +17,7 @@ And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Single Family Home
 And I select Transaction Type as Lease
+And I change Title to Title1
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -40,6 +41,7 @@ And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Studio
 And I select Transaction Type as Trade
+And I change Title to Title2
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -63,6 +65,7 @@ And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Condo
 And I select Transaction Type as Vacation
+And I change Title to Title3
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -86,6 +89,7 @@ And I choose layout as Panoramic
 And I click "Next" button2
 And I select Property Type as Single Family Home
 And I select Transaction Type as Rent
+And I change Title to Title4
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -109,6 +113,7 @@ And I choose layout as Panoramic
 And I click "Next" button2
 And I select Property Type as Studio
 And I select Transaction Type as Sale
+And I change Title to Title5
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -132,6 +137,7 @@ And I choose layout as Panoramic
 And I click "Next" button2
 And I select Property Type as Condo
 And I select Transaction Type as Short Sale
+And I change Title to Title6
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -155,6 +161,7 @@ And I choose layout as Right
 And I click "Next" button2
 And I select Property Type as Single Family Home
 And I select Transaction Type as Foreclosure
+And I change Title to Title7
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -178,6 +185,7 @@ And I choose layout as Right
 And I click "Next" button2
 And I select Property Type as Studio
 And I select Transaction Type as Auction
+And I change Title to Title8
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -201,6 +209,7 @@ And I choose layout as Right
 And I click "Next" button2
 And I select Property Type as Condo
 And I select Transaction Type as Rent-2-Own
+And I change Title to Title9
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

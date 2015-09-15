@@ -53,6 +53,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = "//select[@data-bvalidator-msg='Please provide value for Transaction Type']")
     private WebElement transactionTypeSelectS2;
 
+    @FindBy(how = How.ID, using = "attr-o-15")
+    private WebElement changeTitleInputI1;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -131,5 +134,9 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(transactionTypeSelectS2));
         Select clickThisTransactionType = new Select(transactionTypeSelectS2);
         clickThisTransactionType.selectByVisibleText(transactionType);
+    }
+
+    public void changeTitle(String title){
+        changeTitleInputI1.sendKeys(title);
     }
 }

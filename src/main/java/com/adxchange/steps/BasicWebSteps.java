@@ -165,4 +165,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectTransactionType(transactionType);
     }
 
+    @Given("I change Title to $title")
+    public void changeTitle(String title) {
+        pages.createNewPostPage().changeTitle(title);
+    }
+
 }
