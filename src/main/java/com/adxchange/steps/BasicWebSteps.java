@@ -200,4 +200,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().checkHideExactAddressCheckbox();
     }
 
+    @Given("I select Seller Type as $sellerType")
+    public void selectSellerType(String sellerType) {
+        pages.createNewPostPage().selectSellerType(sellerType);
+    }
+
 }

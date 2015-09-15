@@ -57,13 +57,16 @@ public class CreateNewPostPage extends AbstractPage {
     private WebElement stateSelectS3;
 
     @FindBy(how = How.ID, using = "attr-o-28")
-    private WebElement citySelectS3;
+    private WebElement citySelectS4;
 
     @FindBy(how = How.ID, using = "attr-o-30")
     private WebElement changeZipPostalCodeInputI4;
 
     @FindBy(how = How.ID, using = "attr-c-31")
     private WebElement hideExactAddressCheckboxCh1;
+
+    @FindBy(how = How.ID, using = "attr-o-16")
+    private WebElement sellerTypeSelectS5;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -163,7 +166,7 @@ public class CreateNewPostPage extends AbstractPage {
     }
 
     public void selectCity(String city){
-        Select clickThisCity = new Select(citySelectS3);
+        Select clickThisCity = new Select(citySelectS4);
         clickThisCity.selectByVisibleText(city);
     }
 
@@ -173,5 +176,10 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void checkHideExactAddressCheckbox(){
         hideExactAddressCheckboxCh1.click();
+    }
+
+    public void selectSellerType(String sellerType){
+        Select clickThisCity = new Select(sellerTypeSelectS5);
+        clickThisCity.selectByVisibleText(sellerType);
     }
 }
