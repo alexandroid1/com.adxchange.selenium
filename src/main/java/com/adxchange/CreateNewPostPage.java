@@ -53,6 +53,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-27")
     private WebElement changeSuiteInputI3;
 
+    @FindBy(how = How.ID, using = "attr-o-29")
+    private WebElement stateSelectS3;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -143,5 +146,10 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void changeSuite(String suite){
         changeSuiteInputI3.sendKeys(suite);
+    }
+
+    public void selectState(String state){
+        Select clickThisTransactionType = new Select(stateSelectS3);
+        clickThisTransactionType.selectByVisibleText(state);
     }
 }

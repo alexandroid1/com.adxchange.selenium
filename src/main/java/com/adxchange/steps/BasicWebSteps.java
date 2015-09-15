@@ -180,4 +180,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().changeSuite(suite);
     }
 
+    @Given("I select State as $state")
+    public void selectState(String state) {
+        pages.createNewPostPage().selectState(state);
+    }
+
 }
