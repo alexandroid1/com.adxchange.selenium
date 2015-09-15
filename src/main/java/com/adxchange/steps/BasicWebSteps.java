@@ -195,4 +195,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().changeZipPostalCode(zipPostal);
     }
 
+    @Given("I check \"Hide Exact Address\" checkbox")
+    public void checkHideExactAddressCheckbox() {
+        pages.createNewPostPage().checkHideExactAddressCheckbox();
+    }
+
 }

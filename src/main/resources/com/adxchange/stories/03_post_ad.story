@@ -23,6 +23,7 @@ And I change Suite to Suite1
 And I select State as AA
 And I select City as Apo
 And I change Zip/Postal Code to Zip1
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -52,6 +53,7 @@ And I change Suite to Suite2
 And I select State as AE
 And I select City as Fpo
 And I change Zip/Postal Code to Zip2
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -81,6 +83,7 @@ And I change Suite to Suite3
 And I select State as MB
 And I select City as Altona
 And I change Zip/Postal Code to Zip3
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -110,6 +113,7 @@ And I change Suite to Suite4
 And I select State as MN
 And I select City as Akeley
 And I change Zip/Postal Code to Zip4
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -139,6 +143,7 @@ And I change Suite to Suite5
 And I select State as ND
 And I select City as Abercrombie
 And I change Zip/Postal Code to Zip5
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -168,6 +173,7 @@ And I change Suite to Suite6
 And I select State as NS
 And I select City as Advocate Harbour
 And I change Zip/Postal Code to Zip6
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -197,6 +203,7 @@ And I change Suite to Suite7
 And I select State as NY
 And I select City as Yulan
 And I change Zip/Postal Code to Zip7
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -226,6 +233,7 @@ And I change Suite to Suite8
 And I select State as OR
 And I select City as Adams
 And I change Zip/Postal Code to Zip8
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -255,6 +263,7 @@ And I change Suite to Suite9
 And I select State as SD
 And I select City as Aberdeen
 And I change Zip/Postal Code to Zip9
+And I check "Hide Exact Address" checkbox
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

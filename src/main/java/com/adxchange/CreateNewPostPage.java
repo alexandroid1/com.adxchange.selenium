@@ -62,6 +62,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-30")
     private WebElement changeZipPostalCodeInputI4;
 
+    @FindBy(how = How.ID, using = "attr-c-31")
+    private WebElement hideExactAddressCheckboxCh1;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -166,5 +169,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void changeZipPostalCode(String zipPostal){
         changeZipPostalCodeInputI4.sendKeys(zipPostal);
+    }
+
+    public void checkHideExactAddressCheckbox(){
+        hideExactAddressCheckboxCh1.click();
     }
 }
