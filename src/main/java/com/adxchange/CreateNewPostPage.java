@@ -182,4 +182,6 @@ public class CreateNewPostPage extends AbstractPage {
         Select clickThisCity = new Select(sellerTypeSelectS5);
         clickThisCity.selectByVisibleText(sellerType);
     }
+
+
 }
