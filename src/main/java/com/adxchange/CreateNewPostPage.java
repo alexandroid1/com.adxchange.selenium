@@ -229,7 +229,7 @@ public class CreateNewPostPage extends AbstractPage {
 
     }
 
-    public void selectMainImage(String image){
+    public void selectMainImage(){
         URL url = CreateNewPostPage.class.getClassLoader().getResource("Hriz.jpg");
         URI path = null;
         try {

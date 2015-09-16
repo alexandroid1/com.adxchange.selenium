@@ -220,9 +220,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectBaths(bathsNum);
     }
 
-    @Given("I select Main Image as $image")
-    public void selectMainImage(String image) {
-        pages.createNewPostPage().selectMainImage(image);
+    @Given("I select Main Image as Image1")
+    public void selectMainImage() {
+        pages.createNewPostPage().selectMainImage();
     }
 
 
