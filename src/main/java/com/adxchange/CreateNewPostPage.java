@@ -71,6 +71,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "attr-o-22")
     private WebElement changeOfferPriceInputI5;
 
+    @FindBy(how = How.XPATH, using = ".//div[6]/div[3]/div/select")
+    private WebElement bedsNumSelectS6;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -182,12 +185,17 @@ public class CreateNewPostPage extends AbstractPage {
     }
 
     public void selectSellerType(String sellerType){
-        Select clickThisCity = new Select(sellerTypeSelectS5);
-        clickThisCity.selectByVisibleText(sellerType);
+        Select clickThisSellerType = new Select(sellerTypeSelectS5);
+        clickThisSellerType.selectByVisibleText(sellerType);
     }
 
     public void changeOfferPrice(String offerPrice){
         changeOfferPriceInputI5.sendKeys(offerPrice);
+    }
+
+    public void selectBeds(String bedsNum){
+        Select clickThisBeds = new Select(bedsNumSelectS6);
+        clickThisBeds.selectByVisibleText(bedsNum);
     }
 
 
