@@ -74,6 +74,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[6]/div[3]/div/select")
     private WebElement bedsNumSelectS6;
 
+    @FindBy(how = How.XPATH, using = ".//div[6]/div[4]/div/select")
+    private WebElement bathsNumSelectS7;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -196,6 +199,11 @@ public class CreateNewPostPage extends AbstractPage {
     public void selectBeds(String bedsNum){
         Select clickThisBeds = new Select(bedsNumSelectS6);
         clickThisBeds.selectByVisibleText(bedsNum);
+    }
+
+    public void selectBaths(String bathsNum){
+        Select clickThisBaths = new Select(bathsNumSelectS7);
+        clickThisBaths.selectByVisibleText(bathsNum);
     }
 
 

@@ -215,6 +215,11 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectBeds(bedsNum);
     }
 
+    @Given("I select Baths as $bathsNum")
+    public void selectBaths(String bathsNum) {
+        pages.createNewPostPage().selectBaths(bathsNum);
+    }
+
 
 
 }
