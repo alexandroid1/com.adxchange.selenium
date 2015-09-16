@@ -5,12 +5,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -76,6 +87,12 @@ public class CreateNewPostPage extends AbstractPage {
 
     @FindBy(how = How.XPATH, using = ".//div[6]/div[4]/div/select")
     private WebElement bathsNumSelectS7;
+
+    @FindBy(how = How.NAME, using = "postingImage_1")
+    private WebElement MainImageSelectS8;
+
+    @FindBy(how = How.ID, using = "btnClose")
+    private WebElement submitButtonBtnB3;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -206,5 +223,22 @@ public class CreateNewPostPage extends AbstractPage {
         clickThisBaths.selectByVisibleText(bathsNum);
     }
 
+    public static void setClipboardData(String string) {
+        StringSelection stringSelection = new StringSelection(string);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+
+    }
+
+    public void selectMainImage(String image){
+        URL url = CreateNewPostPage.class.getClassLoader().getResource("Hriz.jpg");
+        URI path = null;
+        try {
+            path = url.toURI();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        MainImageSelectS8.sendKeys(path.toString());
+        submitButtonBtnB3.click();
+    }
 
 }

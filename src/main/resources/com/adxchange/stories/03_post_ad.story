@@ -17,6 +17,8 @@ And I choose layout as Left
 And I click "Next" button2
 And I select Property Type as Single Family Home
 And I select Transaction Type as Lease
+And I select Main Image as Image1
+
 And I change Title to Title1
 And I change Address to Address1
 And I change Suite to Suite1
