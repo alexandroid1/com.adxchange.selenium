@@ -25,6 +25,7 @@ And I select City as Apo
 And I change Zip/Postal Code to Zip1
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Owner
+And I change Offer Price to 1000.11
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -56,6 +57,7 @@ And I select City as Fpo
 And I change Zip/Postal Code to Zip2
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Owner
+And I change Offer Price to 2000.22
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -87,6 +89,7 @@ And I select City as Altona
 And I change Zip/Postal Code to Zip3
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Owner
+And I change Offer Price to 3000.33
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -118,6 +121,7 @@ And I select City as Akeley
 And I change Zip/Postal Code to Zip4
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Owner
+And I change Offer Price to 4000.44
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -149,6 +153,7 @@ And I select City as Abercrombie
 And I change Zip/Postal Code to Zip5
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Broker
+And I change Offer Price to 5000.55
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -180,6 +185,7 @@ And I select City as Advocate Harbour
 And I change Zip/Postal Code to Zip6
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Broker
+And I change Offer Price to 6000.66
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -211,6 +217,7 @@ And I select City as Yulan
 And I change Zip/Postal Code to Zip7
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Broker
+And I change Offer Price to 7000.77
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -242,6 +249,7 @@ And I select City as Adams
 And I change Zip/Postal Code to Zip8
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Broker
+And I change Offer Price to 8000.88
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -273,6 +281,7 @@ And I select City as Aberdeen
 And I change Zip/Postal Code to Zip9
 And I check "Hide Exact Address" checkbox
 And I select Seller Type as Broker
+And I change Offer Price to 9000.99
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

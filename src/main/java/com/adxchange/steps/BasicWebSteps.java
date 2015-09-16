@@ -205,4 +205,10 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectSellerType(sellerType);
     }
 
+    @Given("I change Offer Price to $offerPrice")
+    public void changeOfferPrice(String offerPrice) {
+        pages.createNewPostPage().changeOfferPrice(offerPrice);
+    }
+
+
 }
