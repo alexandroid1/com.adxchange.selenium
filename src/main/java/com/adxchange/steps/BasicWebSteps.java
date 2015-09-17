@@ -245,4 +245,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().clickConfirmSaveYesButton();
     }
 
+    @Given("I click Close Window \"x\" button")
+    public void clickCloseWindowXButton() {
+        pages.createNewPostPage().clickCloseWindowXButton();
+    }
+
 }

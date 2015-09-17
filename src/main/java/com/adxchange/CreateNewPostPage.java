@@ -106,6 +106,8 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[9]/div[3]/div/button[1]")
     private WebElement confirmSaveYesButtonBtnB6;
 
+    @FindBy(how = How.XPATH, using = ".//div[8]/div[1]/a/span")
+    private WebElement closeWindowXButtonBtnB7;
 
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -277,6 +279,10 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void clickConfirmSaveYesButton(){
         confirmSaveYesButtonBtnB6.click();
+    }
+
+    public void clickCloseWindowXButton(){
+        closeWindowXButtonBtnB7.click();
     }
 
 }
