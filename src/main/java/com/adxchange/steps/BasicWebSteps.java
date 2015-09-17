@@ -235,4 +235,14 @@ public class BasicWebSteps {
         pages.createNewPostPage().changePostTitle(postTitle);
     }
 
+    @Given("I click \"Save\" Post Title button")
+    public void clickSavePostTitleButton() {
+        pages.createNewPostPage().clickSavePostTitleButton();
+    }
+
+    @Given("I click Confirm Save \"YES\" button")
+    public void clickConfirmSaveYesButton() {
+        pages.createNewPostPage().clickConfirmSaveYesButton();
+    }
+
 }
