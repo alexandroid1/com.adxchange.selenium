@@ -225,6 +225,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().selectMainImage();
     }
 
-
+    @Given("I click \"Save\" button")
+    public void clickSaveButton() {
+        pages.createNewPostPage().clickSaveButton();
+    }
 
 }

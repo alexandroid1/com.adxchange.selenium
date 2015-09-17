@@ -94,6 +94,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "btnClose")
     private WebElement submitButtonBtnB3;
 
+    @FindBy(how = How.XPATH, using = ".//div[3]/div[4]/div[4]/button[1]")
+    private WebElement saveButtonBtnB4;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -239,6 +242,19 @@ public class CreateNewPostPage extends AbstractPage {
         }
         MainImageSelectS8.sendKeys(path.toString());
         submitButtonBtnB3.click();
+    }
+
+    public void clickSaveButton(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight," +
+                "document.body.scrollHeight,document.documentElement.clientHeight));");
+
+        wait.until(ExpectedConditions.visibilityOf(saveButtonBtnB4));
+        wait.until(ExpectedConditions.elementToBeClickable(saveButtonBtnB4));
+        saveButtonBtnB4.click();
     }
 
 }

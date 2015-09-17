@@ -30,6 +30,7 @@ And I change Offer Price to 1000.11
 And I select Beds as 0
 And I select Baths as 0
 And I click "Next" button2
+And I click "Save" button
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -67,6 +68,7 @@ And I change Offer Price to 2000.22
 And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
+And I click "Save" button
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -104,6 +106,7 @@ And I change Offer Price to 3000.33
 And I select Beds as 2
 And I select Baths as 2
 And I click "Next" button2
+And I click "Save" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -140,6 +143,7 @@ And I change Offer Price to 4000.44
 And I select Beds as 3
 And I select Baths as 3
 And I click "Next" button2
+And I click "Save" button
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -177,6 +181,7 @@ And I change Offer Price to 5000.55
 And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
+And I click "Save" button
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -214,6 +219,7 @@ And I change Offer Price to 6000.66
 And I select Beds as 5
 And I select Baths as 5
 And I click "Next" button2
+And I click "Save" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -250,6 +256,7 @@ And I change Offer Price to 7000.77
 And I select Beds as 7
 And I select Baths as 7
 And I click "Next" button2
+And I click "Save" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -286,6 +293,7 @@ And I change Offer Price to 8000.88
 And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
+And I click "Save" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -322,6 +330,7 @@ And I change Offer Price to 9000.99
 And I select Beds as 9
 And I select Baths as 9
 And I click "Next" button2
+And I click "Save" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
