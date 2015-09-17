@@ -31,6 +31,7 @@ And I select Beds as 0
 And I select Baths as 0
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 1
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -69,6 +70,7 @@ And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 2
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -107,6 +109,7 @@ And I select Beds as 2
 And I select Baths as 2
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 3
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -144,6 +147,7 @@ And I select Beds as 3
 And I select Baths as 3
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 4
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -182,6 +186,7 @@ And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 5
 
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -220,6 +225,7 @@ And I select Beds as 5
 And I select Baths as 5
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 6
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -257,6 +263,7 @@ And I select Beds as 7
 And I select Baths as 7
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 7
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -294,6 +301,7 @@ And I select Beds as 1
 And I select Baths as 1
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 8
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
@@ -331,6 +339,8 @@ And I select Beds as 9
 And I select Baths as 9
 And I click "Next" button2
 And I click "Save" button
+And I change Post Title to Post Title 9
+
 
 Then I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button

@@ -97,6 +97,9 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[3]/div[4]/div[4]/button[1]")
     private WebElement saveButtonBtnB4;
 
+    @FindBy(how = How.ID, using = "postTitle")
+    private WebElement postTitleInputI6;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
@@ -255,6 +258,10 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(saveButtonBtnB4));
         wait.until(ExpectedConditions.elementToBeClickable(saveButtonBtnB4));
         saveButtonBtnB4.click();
+    }
+
+    public void changePostTitle(String postTitle){
+        postTitleInputI6.sendKeys(postTitle);
     }
 
 }

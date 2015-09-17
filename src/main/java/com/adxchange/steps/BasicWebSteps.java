@@ -230,4 +230,9 @@ public class BasicWebSteps {
         pages.createNewPostPage().clickSaveButton();
     }
 
+    @Given("I change Post Title to $postTitle")
+    public void changePostTitle(String postTitle) {
+        pages.createNewPostPage().changePostTitle(postTitle);
+    }
+
 }
