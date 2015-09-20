@@ -90,19 +90,8 @@ public class BasicWebSteps {
         pages.homePage().verifyThatLabelLogOutChangedToSignUp();
     }
 
-    /*---------external logIn----------*/
-
-    @When("I login to site by Facebook as $username,$password")
-    public void whenILoginToSiteByFacebook(String username, String password) {
-        pages.faceBookPage().whenILoginToSiteByFacebook(username, password);
-    }
-
-    @When("I login to site by Twitter as $username,$password")
-    public void whenILoginToSiteByTwitter(String username, String password) {
-        pages.twitterPage().whenILoginToSiteByTwitter(username, password);
-    }
-
     /*---------external logOut----------*/
+
     @Given("I logout from site if user was register by social web")
     @When("I logout from site if user was register by social web")
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb() {
@@ -248,6 +237,28 @@ public class BasicWebSteps {
     @Given("I click Close Window \"x\" button")
     public void clickCloseWindowXButton() {
         pages.createNewPostPage().clickCloseWindowXButton();
+    }
+
+        /*---------external logIn----------*/
+
+    @When("I login to site by Facebook as $username,$password")
+    public void whenILoginToSiteByFacebook(String username, String password) {
+        pages.faceBookPage().whenILoginToSiteByFacebook(username, password);
+    }
+
+    @When("I login to site by Twitter as $username,$password")
+    public void whenILoginToSiteByTwitter(String username, String password) {
+        pages.twitterPage().whenILoginToSiteByTwitter(username, password);
+    }
+
+    @Given("I click \"Facebook\" button")
+    public void clickFacebookButton() {
+        pages.faceBookPage().clickFacebookButton();
+    }
+
+    @Given("I change Email to new Email")
+    public void changeEmailToNew() {
+        pages.faceBookPage().changeEmailToNew();
     }
 
 }

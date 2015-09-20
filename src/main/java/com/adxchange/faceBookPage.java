@@ -72,6 +72,18 @@ public class FaceBookPage extends AbstractPage {
         super(driverProvider);
     }
 
+    public void clickFacebookButton() {
+        facebookIdImgBtnB4.click();
+    }
+
+    public void changeEmailToNew() {
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
+
+        emailAddressInputI3.sendKeys("@theadxchange.com");
+    }
+
     public void whenILoginToSiteByFacebook(String username, String password) {
         signUpBtnB1.click();
         facebookIdImgBtnB4.click();

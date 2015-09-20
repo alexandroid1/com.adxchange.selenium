@@ -3,6 +3,15 @@
 
 !--Scenario: Login to site by Facebook as donald@theadxchange.com,@Rahul123
 !--Given I navigate to testsystem
+
+!--  ----------------------------------------
+!--And I click "SIGNUP" button
+!--And I logout from site if user was register by social web
+!--And I verify that I logged out from social web
+!--And I click "Facebook" button
+!--And I change Email to new Email
+!--  -------------------------------------------
+
 !--When I login to site by Facebook as donald@theadxchange.com,@Rahul123
 !--Then I verify "Welcome back" as Donald,Frantum
 
