@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
  */
 public class CreateNewPostPage extends AbstractPage {
 
-    @FindBy(how = How.ID, using = "attr-r-1-2")
+    @FindBy(how = How.XPATH, using = ".//form/div[1]/div[2]/label/input")
     private WebElement realEstateLinkL1;
 
     @FindBy(how = How.XPATH, using = ".//div[1]/div[4]/div[1]/button")
@@ -103,7 +103,7 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[3]/div/button[1]")
     private WebElement savePostTitleButtonBtnB5;
 
-    @FindBy(how = How.XPATH, using = ".//div[9]/div[3]/div/button[1]")
+    @FindBy(how = How.XPATH, using = "/html/body/div[10]/div[3]/div/button[1]")
     private WebElement confirmSaveYesButtonBtnB6;
 
     @FindBy(how = How.XPATH, using = ".//div[8]/div[1]/a/span")
