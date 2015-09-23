@@ -24,6 +24,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -292,10 +293,14 @@ public class CreateNewPostPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(postTitleInputI6));
         wait.until(ExpectedConditions.elementToBeClickable(postTitleInputI6));
-        postTitleInputI6.sendKeys(postTitle +"_"+ createRandomString());
+        postTitleInputI6.sendKeys(postTitle + "_" + createRandomString());
     }
 
     public void clickSavePostTitleButton(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(savePostTitleButtonBtnB5));
+        wait.until(ExpectedConditions.elementToBeClickable(savePostTitleButtonBtnB5));
         savePostTitleButtonBtnB5.click();
     }
 
