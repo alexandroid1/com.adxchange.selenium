@@ -34,6 +34,7 @@ And I click "Save" button
 And I change Post Title to Post Title 1
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -75,6 +76,7 @@ And I click "Save" button
 And I change Post Title to Post Title 2
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 
@@ -117,6 +119,7 @@ And I click "Save" button
 And I change Post Title to Post Title 3
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -158,6 +161,7 @@ And I click "Save" button
 And I change Post Title to Post Title 4
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -199,6 +203,7 @@ And I click "Save" button
 And I change Post Title to Post Title 5
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -240,6 +245,7 @@ And I click "Save" button
 And I change Post Title to Post Title 6
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -281,6 +287,7 @@ And I click "Save" button
 And I change Post Title to Post Title 7
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -322,6 +329,7 @@ And I click "Save" button
 And I change Post Title to Post Title 8
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri
@@ -363,6 +371,7 @@ And I click "Save" button
 And I change Post Title to Post Title 9
 And I click "Save" Post Title button
 And I click Confirm Save "YES" button
+And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
 Then I verify "Welcome back" as Aditya,Choudhuri

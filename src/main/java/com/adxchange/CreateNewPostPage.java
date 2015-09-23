@@ -23,6 +23,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
+import java.util.Random;
 
 import static org.junit.Assert.assertEquals;
 
@@ -105,6 +106,9 @@ public class CreateNewPostPage extends AbstractPage {
 
     @FindBy(how = How.XPATH, using = ".//div[10]/div[3]/div/button[1]")
     private WebElement confirmSaveYesButtonBtnB6;
+
+    @FindBy(how = How.XPATH, using = ".//div[10]/div[3]/div/button")
+    private WebElement postingSaveStatusOkButtonB7;
 
     @FindBy(how = How.XPATH, using = ".//div[8]/div[1]/a/span")
     private WebElement closeWindowXButtonBtnB7;
@@ -269,12 +273,26 @@ public class CreateNewPostPage extends AbstractPage {
         saveButtonBtnB4.click();
     }
 
+    private static final String mCHAR = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    private static final int STR_LENGTH = 9; // random string lenght
+    Random random = new Random();
+
+    public String createRandomString() {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < STR_LENGTH; i++) {
+            int number = random.nextInt(mCHAR.length());
+            char ch = mCHAR.charAt(number);
+            builder.append(ch);
+        }
+        return builder.toString();
+    }
+
     public void changePostTitle(String postTitle){
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(postTitleInputI6));
         wait.until(ExpectedConditions.elementToBeClickable(postTitleInputI6));
-        postTitleInputI6.sendKeys(postTitle);
+        postTitleInputI6.sendKeys(postTitle +"_"+ createRandomString());
     }
 
     public void clickSavePostTitleButton(){
@@ -287,6 +305,14 @@ public class CreateNewPostPage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOf(confirmSaveYesButtonBtnB6));
         wait.until(ExpectedConditions.elementToBeClickable(confirmSaveYesButtonBtnB6));
         confirmSaveYesButtonBtnB6.click();
+    }
+
+    public void clickPostingSaveStatusOkButton(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(postingSaveStatusOkButtonB7));
+        wait.until(ExpectedConditions.elementToBeClickable(postingSaveStatusOkButtonB7));
+        postingSaveStatusOkButtonB7.click();
     }
 
     public void clickCloseWindowXButton(){

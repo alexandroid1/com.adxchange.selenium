@@ -234,6 +234,11 @@ public class BasicWebSteps {
         pages.createNewPostPage().clickConfirmSaveYesButton();
     }
 
+    @Given("I click Posting Save Status \"OK\" button")
+    public void clickPostingSaveStatusOkButton() {
+        pages.createNewPostPage().clickPostingSaveStatusOkButton();
+    }
+
     @Given("I click Close Window \"x\" button")
     public void clickCloseWindowXButton() {
         pages.createNewPostPage().clickCloseWindowXButton();
