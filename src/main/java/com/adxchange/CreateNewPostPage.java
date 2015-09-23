@@ -94,7 +94,7 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.ID, using = "btnClose")
     private WebElement submitButtonBtnB3;
 
-    @FindBy(how = How.XPATH, using = ".//div[3]/div[4]/div[4]/button[1]")
+    @FindBy(how = How.XPATH, using = ".//div[3]/div[4]/div[3]/button[1]")
     private WebElement saveButtonBtnB4;
 
     @FindBy(how = How.ID, using = "postTitle")
@@ -103,7 +103,7 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[3]/div/button[1]")
     private WebElement savePostTitleButtonBtnB5;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div[10]/div[3]/div/button[1]")
+    @FindBy(how = How.XPATH, using = ".//div[10]/div[3]/div/button[1]")
     private WebElement confirmSaveYesButtonBtnB6;
 
     @FindBy(how = How.XPATH, using = ".//div[8]/div[1]/a/span")
@@ -270,6 +270,10 @@ public class CreateNewPostPage extends AbstractPage {
     }
 
     public void changePostTitle(String postTitle){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(postTitleInputI6));
+        wait.until(ExpectedConditions.elementToBeClickable(postTitleInputI6));
         postTitleInputI6.sendKeys(postTitle);
     }
 
@@ -278,6 +282,10 @@ public class CreateNewPostPage extends AbstractPage {
     }
 
     public void clickConfirmSaveYesButton(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(confirmSaveYesButtonBtnB6));
+        wait.until(ExpectedConditions.elementToBeClickable(confirmSaveYesButtonBtnB6));
         confirmSaveYesButtonBtnB6.click();
     }
 
