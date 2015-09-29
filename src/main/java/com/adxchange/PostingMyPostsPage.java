@@ -25,9 +25,7 @@ public class PostingMyPostsPage extends AbstractPage  {
         super(driverProvider);
     }
 
-
-
-    public void verifyAdName(String adName){
+    public void verifyAdName(){
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.textToBePresentInElement(adNameLinkL1, Pages.postTitleRandomString));

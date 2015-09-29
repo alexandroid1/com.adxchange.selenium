@@ -38,8 +38,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Ad Name" as Post Title 1
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -82,8 +82,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -126,7 +126,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -169,7 +170,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -212,7 +214,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -255,7 +258,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -298,7 +302,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -341,7 +346,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 
@@ -384,7 +390,8 @@ And I click Confirm Save "YES" button
 And I click Posting Save Status "OK" button
 !-- And I click Close Window "x" button
 
-Then I verify "Welcome back" as Aditya,Choudhuri
+Then I verify "Ad Name"
+And I verify "Welcome back" as Aditya,Choudhuri
 And I click "LOG OUT" button
 And I verify that label "LOG OUT" changed to "SIGNUP"
 

@@ -81,9 +81,9 @@ public class BasicWebSteps {
         pages.homePage().clickLogOutButton();
     }
 
-    @Then("I verify \"Ad Name\" as $adName")
-    public void verifyAdName(String adName) {
-        pages.postingMyPostsPage().verifyAdName(adName);
+    @Then("I verify \"Ad Name\"")
+    public void verifyAdName() {
+        pages.postingMyPostsPage().verifyAdName();
     }
 
     @Given("I verify \"Welcome back\" as $firstName,$lastName")
