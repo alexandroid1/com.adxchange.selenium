@@ -85,10 +85,13 @@ public class CreateNewPostPage extends AbstractPage {
     private WebElement changeOfferPriceInputI5;
 
     @FindBy(how = How.XPATH, using = ".//div[6]/div[3]/div/select")
-    private WebElement bedsNumSelectS6;
+    private WebElement currencySelectS6;
 
     @FindBy(how = How.XPATH, using = ".//div[6]/div[4]/div/select")
-    private WebElement bathsNumSelectS7;
+    private WebElement bedsNumSelectS7;
+
+    @FindBy(how = How.XPATH, using = ".//div[6]/div[5]/div/select")
+    private WebElement bathsNumSelectS81;
 
     @FindBy(how = How.NAME, using = "postingImage_1")
     private WebElement MainImageSelectS8;
@@ -117,6 +120,8 @@ public class CreateNewPostPage extends AbstractPage {
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
+
+
 
     public void chooseCategory() {
         WebDriver driver = getDriverProvider().get();
@@ -233,13 +238,18 @@ public class CreateNewPostPage extends AbstractPage {
         changeOfferPriceInputI5.sendKeys(offerPrice);
     }
 
+    public void selectCurrency(String currency){
+        Select clickThisCurrency = new Select(currencySelectS6);
+        clickThisCurrency.selectByVisibleText(currency);
+    }
+
     public void selectBeds(String bedsNum){
-        Select clickThisBeds = new Select(bedsNumSelectS6);
+        Select clickThisBeds = new Select(bedsNumSelectS7);
         clickThisBeds.selectByVisibleText(bedsNum);
     }
 
     public void selectBaths(String bathsNum){
-        Select clickThisBaths = new Select(bathsNumSelectS7);
+        Select clickThisBaths = new Select(bathsNumSelectS81);
         clickThisBaths.selectByVisibleText(bathsNum);
     }
 
@@ -293,7 +303,8 @@ public class CreateNewPostPage extends AbstractPage {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(postTitleInputI6));
         wait.until(ExpectedConditions.elementToBeClickable(postTitleInputI6));
-        postTitleInputI6.sendKeys(postTitle + "_" + createRandomString());
+        Pages.postTitleRandomString = postTitle + "_" + createRandomString();
+        postTitleInputI6.sendKeys(Pages.postTitleRandomString);
     }
 
     public void clickSavePostTitleButton(){

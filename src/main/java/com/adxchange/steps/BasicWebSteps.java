@@ -9,6 +9,8 @@ public class BasicWebSteps {
 
     public Pages pages;
 
+
+
     public BasicWebSteps(Pages pages) {
         this.pages = pages;
     }
@@ -77,6 +79,11 @@ public class BasicWebSteps {
     @Then("I click \"LOG OUT\" button")
     public void clickLogOutButton() {
         pages.homePage().clickLogOutButton();
+    }
+
+    @Then("I verify \"Ad Name\" as $adName")
+    public void verifyAdName(String adName) {
+        pages.postingMyPostsPage().verifyAdName(adName);
     }
 
     @Given("I verify \"Welcome back\" as $firstName,$lastName")
@@ -197,6 +204,11 @@ public class BasicWebSteps {
     @Given("I change Offer Price to $offerPrice")
     public void changeOfferPrice(String offerPrice) {
         pages.createNewPostPage().changeOfferPrice(offerPrice);
+    }
+
+    @Given("I select Currency as $currency")
+    public void selectCurrency(String currency) {
+        pages.createNewPostPage().selectCurrency(currency);
     }
 
     @Given("I select Beds as $bedsNum")

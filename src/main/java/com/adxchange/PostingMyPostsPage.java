@@ -18,8 +18,20 @@ public class PostingMyPostsPage extends AbstractPage  {
     @FindBy(how = How.ID, using = "welcomeBack")
     private WebElement welcomeBackBtnB1;
 
+    @FindBy(how = How.XPATH, using = ".//table/tbody/tr[3]/td[2]/a")
+    private WebElement adNameLinkL1;
+
     public PostingMyPostsPage(WebDriverProvider driverProvider) {
         super(driverProvider);
+    }
+
+
+
+    public void verifyAdName(String adName){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.textToBePresentInElement(adNameLinkL1, Pages.postTitleRandomString));
+        assertEquals(Pages.postTitleRandomString, adNameLinkL1.getText());
     }
 
     public void verifyWelcomeBackAsFirstNameLastName(String firstName, String lastName){

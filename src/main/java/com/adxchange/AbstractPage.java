@@ -49,5 +49,4 @@ public abstract class AbstractPage extends WebDriverPage {
         return text.replace("<", "&lt;").replace(">", "&gt;");
     }
 
-    
 }

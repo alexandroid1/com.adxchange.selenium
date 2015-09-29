@@ -21,6 +21,8 @@ public class Pages {
     private TwitterPage twitterPage;
     private CreateNewPostPage createNewPostPage;
 
+    public static String postTitleRandomString;
+
     public Pages(WebDriverProvider driverProvider) {
         this.driverProvider = driverProvider;
     }
