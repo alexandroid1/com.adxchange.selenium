@@ -17,13 +17,15 @@ import java.util.Random;
  */
 public class FaceBookPage extends AbstractPage {
 
+/*
     @FindBy(how = How.ID, using = "signUp")
     private WebElement signUpBtnB1;
+*/
 
     @FindBy(how = How.ID, using = "facebookIdImg")
     private WebElement facebookIdImgBtnB4;
 
-    @FindBy(how = How.ID, using = "email")
+/*    @FindBy(how = How.ID, using = "email")
     private WebElement emailInputI1;
 
     @FindBy(how = How.ID, using = "pass")
@@ -66,7 +68,7 @@ public class FaceBookPage extends AbstractPage {
     private WebElement enteredEmailHasAlreadyRegisteredOkBtnB2;
 
     @FindBy(how = How.LINK_TEXT, using = "Click here")
-    private WebElement profileDetailIsUpdatedClickHereLinkL1 ;
+    private WebElement profileDetailIsUpdatedClickHereLinkL1 ;*/
 
     public FaceBookPage(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -76,7 +78,7 @@ public class FaceBookPage extends AbstractPage {
         facebookIdImgBtnB4.click();
     }
 
-    public void changeEmailToNew() {
+/*    public void changeEmailToNew() {
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(socialLoginCompleteContainerC1));
@@ -120,5 +122,5 @@ public class FaceBookPage extends AbstractPage {
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
-    }
+    }*/
 }

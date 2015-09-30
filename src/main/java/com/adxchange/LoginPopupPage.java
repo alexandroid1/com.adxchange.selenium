@@ -63,7 +63,7 @@ public class LoginPopupPage extends AbstractPage {
         loginSubmitBtnB2.click();
     }
 
-    public void changeUsernamePasswordByPostYourAdClicking(String username, String password){
+/*    public void changeUsernamePasswordByPostYourAdClicking(String username, String password){
         clickPostYourAdButton();
         changeUsernamePassword(username, password);
         clickLoginButton();
@@ -73,7 +73,7 @@ public class LoginPopupPage extends AbstractPage {
         clickSignupButton();
         changeUsernamePassword(username, password);
         clickLoginButton();
-    }
+    }*/
 
     public void whenILogoutFromSiteIfUserWasRegisterBySocialWeb(){
         if (clickHereLinkL1.isDisplayed()){

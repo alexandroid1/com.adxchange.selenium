@@ -9,8 +9,6 @@ public class BasicWebSteps {
 
     public Pages pages;
 
-
-
     public BasicWebSteps(Pages pages) {
         this.pages = pages;
     }
@@ -40,11 +38,11 @@ public class BasicWebSteps {
 
     /*---------login----------*/
 
-    @Given("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
+/*    @Given("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
     @When("I change Username,Password by \"POST YOUR AD\" clicking to $username,$password")
     public void changeUsernamePasswordByPostYourAdClicking(String username, String password) {
         pages.loginPopupPage().changeUsernamePasswordByPostYourAdClicking(username, password);
-    }
+    }*/
 
     @Given("I click \"POST YOUR AD\" button")
     @When("I click \"POST YOUR AD\" button")
@@ -70,10 +68,10 @@ public class BasicWebSteps {
         pages.loginPopupPage().clickSignupButton();
     }
 
-    @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
+/*    @When("I change Username,Password by \"SIGNUP\" clicking to $username,$password")
     public void whenIChangeUsernamePasswordBySignUpClicking(String username, String password) {
         pages.loginPopupPage().whenIChangeUsernamePasswordBySignUpClicking(username, password);
-    }
+    }*/
 
     @When("I click \"LOG OUT\" button")
     @Then("I click \"LOG OUT\" button")
@@ -258,24 +256,34 @@ public class BasicWebSteps {
 
         /*---------external logIn----------*/
 
-    @When("I login to site by Facebook as $username,$password")
+/*    @When("I login to site by Facebook as $username,$password")
     public void whenILoginToSiteByFacebook(String username, String password) {
         pages.faceBookPage().whenILoginToSiteByFacebook(username, password);
-    }
+    }*/
 
-    @When("I login to site by Twitter as $username,$password")
+/*    @When("I login to site by Twitter as $username,$password")
     public void whenILoginToSiteByTwitter(String username, String password) {
         pages.twitterPage().whenILoginToSiteByTwitter(username, password);
-    }
+    }*/
 
     @Given("I click \"Facebook\" button")
     public void clickFacebookButton() {
         pages.faceBookPage().clickFacebookButton();
     }
 
-    @Given("I change Email to new Email")
+    @Given("I click \"Twitter\" button")
+    public void clickTwitterButton() {
+        pages.twitterPage().clickTwitterButton();
+    }
+
+    @Given("I click \"Authorize\" button")
+    public void clickAuthorizeButton() {
+        pages.twitterPage().clickAuthorizeButton();
+    }
+
+/*    @Given("I change Email to new Email")
     public void changeEmailToNew() {
         pages.faceBookPage().changeEmailToNew();
-    }
+    }*/
 
 }

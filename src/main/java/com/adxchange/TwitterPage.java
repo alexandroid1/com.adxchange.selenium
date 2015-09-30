@@ -16,21 +16,23 @@ import java.util.concurrent.TimeUnit;
  */
 public class TwitterPage extends AbstractPage {
 
+/*
     @FindBy(how = How.ID, using = "signUp")
     private WebElement signUpBtnB1;
+*/
 
     @FindBy(how = How.ID, using = "twitterIdImg")
     private WebElement twitterIdImgBtnB2;
 
-    @FindBy(how = How.ID, using = "username_or_email")
+ /*   @FindBy(how = How.ID, using = "username_or_email")
     private WebElement userNameInputI1;
 
     @FindBy(how = How.ID, using = "password")
     private WebElement passwordInputI2;
-
+ */
     @FindBy(how = How.ID, using = "allow")
     private WebElement allowButtonBtnB3;
-
+ /*
     @FindBy(how = How.ID, using = "socialLoginCompleteContainer")
     private WebElement socialLoginCompleteContainerC1;
 
@@ -56,14 +58,26 @@ public class TwitterPage extends AbstractPage {
     private WebElement submitBtnB1;
 
     @FindBy(how = How.ID, using = "welcomeBack")
-    private WebElement welcomeBackBtnB1;
+    private WebElement welcomeBackBtnB1;*/
 
 
     public TwitterPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
 
-    public void whenILoginToSiteByTwitter(String username, String password){
+    public void clickTwitterButton() {
+        twitterIdImgBtnB2.click();
+    }
+
+    public void clickAuthorizeButton() {
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(allowButtonBtnB3));
+        wait.until(ExpectedConditions.elementToBeClickable(allowButtonBtnB3));
+        allowButtonBtnB3.click();
+    }
+
+/*    public void whenILoginToSiteByTwitter(String username, String password){
         signUpBtnB1.click();
         twitterIdImgBtnB2.click();
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -89,5 +103,5 @@ public class TwitterPage extends AbstractPage {
         Select clickThisGender = new Select(userGenderSelectS1);
         clickThisGender.selectByValue("male");
         submitBtnB1.click();
-    }
+    }*/
 }
