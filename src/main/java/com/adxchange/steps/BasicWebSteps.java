@@ -281,6 +281,16 @@ public class BasicWebSteps {
         pages.twitterPage().clickAuthorizeButton();
     }
 
+    @Given("I click \"Google+\" button")
+    public void clickGooglePlusButton() {
+        pages.googlePlusPage().clickGooglePlusButton();
+    }
+
+    @Given("I choose \"Google+\" account as adxchange92@gmail.com")
+    public void chooseGooglePlusAccount() {
+        pages.googlePlusPage().chooseGooglePlusAccount();
+    }
+
 /*    @Given("I change Email to new Email")
     public void changeEmailToNew() {
         pages.faceBookPage().changeEmailToNew();

@@ -20,6 +20,7 @@ public class Pages {
     private FaceBookPage faceBookPage;
     private TwitterPage twitterPage;
     private CreateNewPostPage createNewPostPage;
+    private GooglePlusPage googlePlusPage;
 
     public static String postTitleRandomString;
 
@@ -82,5 +83,13 @@ public class Pages {
         }
         PageFactory.initElements(driverProvider.get(),  createNewPostPage);
         return createNewPostPage;
+    }
+
+    public GooglePlusPage googlePlusPage(){
+        if ( googlePlusPage == null ){
+            googlePlusPage = new GooglePlusPage(driverProvider);
+        }
+        PageFactory.initElements(driverProvider.get(),  googlePlusPage);
+        return googlePlusPage;
     }
 }

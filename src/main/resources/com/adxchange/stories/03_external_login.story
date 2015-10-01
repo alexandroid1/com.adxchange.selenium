@@ -31,4 +31,8 @@ Given I navigate to testsystem
 And I click "SIGNUP" button
 And I logout from site if user was register by social web
 And I verify that I logged out from social web
-!-- And I click "Google+" button
+And I click "Google+" button
+And I choose "Google+" account as adxchange92@gmail.com
+Then I verify "Welcome back" as Donald,Frantum
+And I click "LOG OUT" button
+And I verify that label "LOG OUT" changed to "SIGNUP"
