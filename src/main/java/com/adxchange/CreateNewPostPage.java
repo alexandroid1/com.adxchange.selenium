@@ -108,7 +108,7 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[3]/div/button[1]")
     private WebElement savePostTitleButtonBtnB5;
 
-    @FindBy(how = How.XPATH, using = ".//div[10]/div[3]/div/button[1]")
+    @FindBy(how = How.XPATH, using = ".//div[9]/div[3]/div/button[1]")
     private WebElement confirmSaveYesButtonBtnB6;
 
     @FindBy(how = How.XPATH, using = ".//div[10]/div[3]/div/button")
@@ -117,10 +117,12 @@ public class CreateNewPostPage extends AbstractPage {
     @FindBy(how = How.XPATH, using = ".//div[8]/div[1]/a/span")
     private WebElement closeWindowXButtonBtnB7;
 
+    @FindBy(how = How.XPATH, using = ".//body/header/nav/div/ul/li[3]/a")
+    private WebElement clickMyPostsTabT1;
+
     public CreateNewPostPage(WebDriverProvider driverProvider) {
         super(driverProvider);
     }
-
 
 
     public void chooseCategory() {
@@ -315,7 +317,7 @@ public class CreateNewPostPage extends AbstractPage {
         savePostTitleButtonBtnB5.click();
     }
 
-    public void clickConfirmSaveYesButton(){
+    public void clickConfirmSaveYesButton() {
         WebDriver driver = getDriverProvider().get();
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(confirmSaveYesButtonBtnB6));
@@ -333,6 +335,14 @@ public class CreateNewPostPage extends AbstractPage {
 
     public void clickCloseWindowXButton(){
         closeWindowXButtonBtnB7.click();
+    }
+
+    public void clickMyPostsTab(){
+        WebDriver driver = getDriverProvider().get();
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.visibilityOf(clickMyPostsTabT1));
+        wait.until(ExpectedConditions.elementToBeClickable(clickMyPostsTabT1));
+        clickMyPostsTabT1.click();
     }
 
 }

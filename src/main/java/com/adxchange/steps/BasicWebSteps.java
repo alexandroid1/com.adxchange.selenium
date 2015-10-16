@@ -254,6 +254,13 @@ public class BasicWebSteps {
         pages.createNewPostPage().clickCloseWindowXButton();
     }
 
+    @Given("I click \"My Posts\" tab")
+    public void clickMyPostsTab() {
+        pages.createNewPostPage().clickMyPostsTab();
+    }
+
+
+
         /*---------external logIn----------*/
 
 /*    @When("I login to site by Facebook as $username,$password")
